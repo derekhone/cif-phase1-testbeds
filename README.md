@@ -25,8 +25,11 @@ Reproducing
 pip install numpy scipy
 python appendix_a_qubit_testbed.py
 python appendix_b_inheritance_test.py
+python appendix_c_restricted_access_test.py
 Deterministic up to seeded RNGs. Reviewers are invited to vary noise rates,
 gain, sensing noise, coupling strength, and envelope parameters.
+
+appendix_c_restricted_access_test.py - Preregistered v3 test: inheritance-guided control when the target CANNOT be corrected directly. ROBUST PASS at weak coupling (+3.5% over best baseline, 95% CI excludes zero, N=100 seeds); loses at strong coupling. First positive result for the inheritance quantity, reported with full boundaries.
 
 Open falsification invitation
 If you can break tests T1–T6 in Appendix A, or demonstrate a regime where the
