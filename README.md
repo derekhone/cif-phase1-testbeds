@@ -1,40 +1,37 @@
 # UIP Phase 1 — Numerical Testbeds
 
-Reproducible simulations accompanying the UIP (Unified Inheritance Physics)
-Phase 1 review packet.
+Reproducible simulations accompanying the UIP Phase 1 review packet.
 
-**Status:** Candidate framework under professor review. Not claimed as new physics.
-All results are consistent with standard quantum mechanics, quantum information
-theory, and feedback control. This repository exists so reviewers can reproduce,
-vary, and attempt to break every reported result.
+**Status:** Candidate framework under review. Not claimed as new physics. All results are consistent with standard quantum mechanics, quantum information theory, and feedback control. This repository exists so reviewers can reproduce, vary, and attempt to break every reported result. Note: the "Unified" designation was retired by the Appendix G result (see below).
 
 **Preprint (DOI):** https://doi.org/10.5281/zenodo.21246247
 
 ## Contents
-File	Description	Outcome
-appendix_a_qubit_testbed.py	Single noisy qubit memory. Full numerical specification of C, D, R, U, G, L, W, E. Six falsification tests + fixed-point prediction.	6/6 PASS; predicted D* = 0.1032 vs simulated 0.1051 (within 2%)
-appendix_b_inheritance_test.py	Two-qubit inheritance-guided control (v1 and v2, preregistered).	FAIL — reported in full. Inheritance-guided allocation loses to direct target protection whenever the target is directly correctable.
-Why the failure is included
-The Phase 1 commitment is that UIP claims be falsifiable and that falsifications
-be published alongside confirmations. Appendix B narrows the inheritance claim
-and leaves a sharpened boundary hypothesis (restricted-access systems, v3)
-open for independent testing. It was deliberately not tested by the authors
-to avoid iterative revision converging on curve-fitting.
 
-Reproducing
-pip install numpy scipy
-python appendix_a_qubit_testbed.py
-python appendix_b_inheritance_test.py
-python appendix_c_restricted_access_test.py
-Deterministic up to seeded RNGs. Reviewers are invited to vary noise rates,
-gain, sensing noise, coupling strength, and envelope parameters.
+- **appendix_a_qubit_testbed.py** — Single noisy qubit memory. Full numerical specification of C, D, R, U, G, L, W, E. Six falsification tests + fixed-point prediction. **Outcome: 6/6 PASS; predicted D* = 0.1032 vs simulated 0.1051 (within 2%)**
+- **appendix_b_inheritance_test.py** — Two-qubit inheritance-guided control (v1 and v2, preregistered). **Outcome: FAIL — reported in full**
+- **appendix_c_restricted_access_test.py** — Preregistered v3 test: inheritance-guided control when the target CANNOT be corrected directly. **Outcome: ROBUST PASS at weak coupling (+3.5% over best baseline, 95% CI excludes zero, N=100 seeds); loses at strong coupling**
+- **uip_phase1_appendix_de_crossover.py** — Crossover point + zero-free-parameter law s*(γ), r = 0.976; 3-qubit generalization. **Outcome: CONFIRMED**
+- **uip_phase1_appendix_f_gauntlet.py** — Optimal-policy gauntlet: decision-quantity sufficiency (v3: 12.19%, v4: 22.06%). **Outcome: FALSIFIED (twice)**
+- **uip_phase1_appendix_g_universality.py** — Cross-platform transfer of C̄* = 1/1.45 to a structure-matched classical system. **Outcome: FALSIFIED — "Unified" retired**
+- **uip_phase1_synthesis_manuscript.pdf** — Complete Phase 1 manuscript: 4 confirmed predictions, 3 falsified claims. **FINAL**
 
-appendix_c_restricted_access_test.py - Preregistered v3 test: inheritance-guided control when the target CANNOT be corrected directly. ROBUST PASS at weak coupling (+3.5% over best baseline, 95% CI excludes zero, N=100 seeds); loses at strong coupling. First positive result for the inheritance quantity, reported with full boundaries.
+## Why the failures are included
 
-Open falsification invitation
-If you can break tests T1–T6 in Appendix A, or demonstrate a regime where the
-v2 inheritance rule beats all baselines (contradicting our negative result),
-please open an issue. Refutations are as valuable as confirmations.
+The Phase 1 commitment is that UIP claims be falsifiable and that falsifications be published alongside confirmations. Appendix B narrowed the inheritance claim to a boundary hypothesis (restricted-access systems), confirmed in Appendix C. Appendices F and G closed the control-sufficiency and universality claims at their preregistered thresholds. No claim was revised more than once; iteration beyond that was prohibited to avoid curve-fitting.
 
-"A false balance is an abomination to the LORD, but a just weight is His
-delight." — Proverbs 11:1
+## Reproducing
+
+    pip install numpy scipy
+    python appendix_a_qubit_testbed.py
+    python appendix_b_inheritance_test.py
+    python appendix_c_restricted_access_test.py
+    python uip_phase1_appendix_de_crossover.py
+    python uip_phase1_appendix_f_gauntlet.py
+    python uip_phase1_appendix_g_universality.py
+
+Deterministic up to seeded RNGs. Reviewers are invited to vary noise rates, gain, sensing noise, coupling strength, and envelope parameters.
+
+## Open falsification invitation
+
+If you can break tests T1–T6 in Appendix A, break the s*(γ) law outside the swept range, tighten the Appendix F adversary (exact dynamic programming widens our reported gap), or find a classical system with a native correction cost showing a crossover at C̄* = 1/1.45 — please open an issue. Refutations are as valuable as confirmations.
