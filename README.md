@@ -35,3 +35,20 @@ Deterministic up to seeded RNGs. Reviewers are invited to vary noise rates, gain
 ## Open falsification invitation
 
 If you can break tests T1–T6 in Appendix A, break the s*(γ) law outside the swept range, tighten the Appendix F adversary (exact dynamic programming widens our reported gap), or find a classical system with a native correction cost showing a crossover at C̄* = 1/1.45 — please open an issue. Refutations are as valuable as confirmations.
+
+## Appendix H — First Hardware Test (IBM Quantum): FAIL
+
+First test outside our own simulations. Preregistered in
+`prereg_h1_ibm_fixed_point.md` before execution.
+
+- Backend: ibm_kingston (Heron r2), qubit 140, job d99brisqp3as739tudkg
+- Predicted steady-state D* = 0.0302 (from calibration T2, +/-10% window)
+- Measured D* = 0.1463 — deviation 383.7% — **kill-condition triggered**
+- Diagnosis: bare-idle decay is governed by T2*, not echo-T2 from published
+  calibration; the fixed-point *structure* (flat steady state) was observed,
+  but the input noise model is falsified on hardware.
+- Sharpened hypothesis H2 (not yet run): same law with in-situ measured
+  decay rate, or echo pulses inserted in delays.
+
+Ledger: 4 confirmed / 4 falsified — including one rejection delivered by
+hardware we do not control.
