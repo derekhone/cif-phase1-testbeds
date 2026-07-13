@@ -1,0 +1,13 @@
+{
+  "job_id": "d9ajf3eg26ic73deq3l0",
+  "backend": "ibm_kingston",
+  "shots": 4096,
+  "timestamp_utc": "2026-07-13T19:09:00.214756",
+  "arm1_authorized_gated_payload1": 0.9013671875,
+  "arm2_unauthorized_gated_payload1": 0.126220703125,
+  "arm3_ungated_control_payload1": 0.940185546875,
+  "arm4_idle_control_payload1": 0.135009765625,
+  "DENY_leakage": 0.126220703125,
+  "ALLOW_fidelity": 0.9013671875,
+  "prereg_pass": false
+}
