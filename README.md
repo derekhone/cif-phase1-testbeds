@@ -47,6 +47,20 @@ The fixed-point law under test: `C* = f / (1 - (1-f) * exp(-gamma))`, `D* = (1 -
 
 Final status of the law: **a simulation result, not a hardware law.** An extended model with explicit gate-error, readout-error, and T1 terms is a Phase 2 hypothesis, deliberately not attempted in Phase 1.
 
+---
+
+### Post-Closure Replication (2026-07-13)
+
+The fixed-point law falsified in Appendix I was re-tested on a **second device**
+(ibm_marrakesh, qubit 2, preregistered before submission: `prereg_h2a_marrakesh_echo_fixed_point.md`).
+
+**Result: FAIL** — measured D* = 0.0529 vs. predicted 0.0407 (30.1% deviation,
+outside the ±10% window). Job ID: `d9airde6hjac73fegau0`.
+
+The falsification is **device-independent**: kingston 81.9% off, marrakesh 30.1% off.
+This strengthens falsification #5; it does not reopen Phase 1.
+**Ledger unchanged: 4 confirmed / 5 falsified.** See `replication_marrakesh/`.
+
 ## Contents
 
 - **uip_phase1_complete_synthesis_final.pdf** — Final closing manuscript (Appendices A–I): 4 confirmed / 5 falsified. Supersedes all earlier synthesis drafts.
