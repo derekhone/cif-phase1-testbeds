@@ -72,7 +72,6 @@ a term that persists or grows with radius.
 ## Files
 
 - `ark_dm1_run.py` — analysis script (exact locked protocol)
-- `results/ark_dm1_results.json` — full machine-readable output
 - `MODEL_LOCK.md` — preregistered model, metric, threshold, sample rules
 
 ## Data credit
