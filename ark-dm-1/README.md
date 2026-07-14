@@ -2,6 +2,14 @@
 
 ## Hidden-Inheritance Rotation Curve Test
 
+## Status: COMPLETE — ❌ FAIL (preregistered kill-condition fired)
+
+Single locked run, 2026-07-14. The Ark term improved median fractional
+velocity error by **7.69%** over the visible-matter-only baseline
+(threshold: ≥10%). See [RESULTS.md](RESULTS.md) for the full per-galaxy
+table and interpretation. Per the No Rescue Rule, no alternate model was
+substituted after the result.
+
 ARK-DM-1 is a preregistered open-data experiment inspired by the former UIP / Ark / inheritance-field library.
 
 The purpose is not to claim that Ark, UIP, or any new physics explains dark matter.
@@ -12,9 +20,8 @@ Can an inheritance-inspired hidden term be translated into a measurable mathemat
 
 ## Status
 
-Preregistered before execution.
-
-No code has been run yet under this test.
+Preregistered before execution. Executed 2026-07-14 as a single locked run.
+Result: FAIL — see RESULTS.md.
 
 ## Public Posture
 
