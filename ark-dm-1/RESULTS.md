@@ -1,5 +1,3 @@
-VERDICT: FAIL | improvement: 7.69 %
-
 # ARK-DM-1 — RESULTS
 
 **Experiment:** ARK-DM-1 (preregistered open-data test)
