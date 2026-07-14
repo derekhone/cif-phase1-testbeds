@@ -72,6 +72,8 @@ This strengthens falsification #5; it does not reopen Phase 1.
 - **uip_phase1_appendix_g_universality.pdf** — Appendix G: universality test (FAIL; "Unified" retired)
 - **h1_ibm_fixed_point.py / prereg_h1_ibm_fixed_point.md / uip_phase1_appendix_h_hardware_fail.pdf** — Appendix H: first hardware test (FAIL, 383.7%)
 - **h2a_echo_test.py / prereg_h2a_echo_fixed_point.md / uip_phase1_appendix_i_h2a_hardware_result.pdf** — Appendix I: echo-protected hardware test (FAIL, 81.9% — law falsified)
+  - **ark-dm-1/** — Hidden-Inheritance Rotation Curve Test (SPARC data).
+  Preregistered, single locked run. **Result: FAIL** (7.69% < 10% threshold).
 
 ## Reproducibility
 
