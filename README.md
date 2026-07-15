@@ -32,6 +32,15 @@ Every test in this program followed the same protocol:
 
 **FINAL: 4 confirmed / 5 falsified. Both hardware verdicts were delivered by a device outside our control and published unedited the same day. Phase 1 closed under the no-third-attempt rule.**
 
+**Appendix G (chain experiment)** — UIP v4: Inaccessible-memory chain (A → M → B, correction on A/M only).
+  Preregistered P1/P2. **Result: FALSIFIED** — uip_v4 underperformed the alternating baseline by 15.5%.
+  Files: `appendix_g_uip_v4_chain_experiment.md`, `appendix_g_uip_v4_chain_experiment.pdf`
+
+  Note: "Appendix G (universality)" and "Appendix G (chain experiment)" are distinct experiments; see filenames.
+ 
+
+  
+
 ## Hardware tests (IBM Quantum, ibm_kingston, Heron r2, qubit 140)
 
 The fixed-point law under test: `C* = f / (1 - (1-f) * exp(-gamma))`, `D* = (1 - C*) / 2`, with `gamma = delay / T2`.
