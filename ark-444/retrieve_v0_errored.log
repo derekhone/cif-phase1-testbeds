@@ -1,0 +1,11 @@
+qiskit_runtime_service._discover_account:WARNING:2026-07-16 23:19:37,832: Loading account with the given token. A saved account will not be used.
+[RETRIEVE] job d9cmdvsjeosc73fgfk5g status = ERROR
+Traceback (most recent call last):
+  File "/home/ubuntu/github_repos/uip-phase1-testbeds/ark-444/ark_444_retrieve.py", line 78, in <module>
+    main()
+  File "/home/ubuntu/github_repos/uip-phase1-testbeds/ark-444/ark_444_retrieve.py", line 46, in main
+    result = job.result()  # blocks until done
+             ^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.11/site-packages/qiskit_ibm_runtime/runtime_job_v2.py", line 152, in result
+    raise RuntimeJobFailureError(f"Unable to retrieve job result. {error_message}")
+qiskit_ibm_runtime.exceptions.RuntimeJobFailureError: "Unable to retrieve job result. Error code 1524; Failed to execute program: 'Some Dynamic Circuit features are not supported -- [See Classical feedforward and control flow](https://docs.quantum.ibm.com/guides/classical-feedforward-and-control-flow) for additional information. -- https://ibm.biz/error_codes#1524"

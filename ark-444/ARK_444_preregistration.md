@@ -137,4 +137,38 @@ Authoritative hashes are maintained in `MANIFEST.txt` (committed in the same pre
 
 ---
 
+## AMENDMENT v1.1 — Control-flow correction (2026-07-16, before any result)
+
+**Status of v1.0 principal job:** ERRORED, **zero counts produced.**
+
+**What happened.** The v1.0 integrity gate was implemented as a **nested** conditional
+(`if ca==1: if ce==1: X(Q_P)`). On submission to `ibm_marrakesh`, the principal job
+(**`d9cmdvsjeosc73fgfk5g`**, submitted 2026-07-16, committed at LOCK-child commit
+`e523654`) failed to execute with **IBM error code 1524 — "Some Dynamic Circuit features
+are not supported (classical feedforward and control flow)."** IBM Qiskit Runtime does
+**not** support nested `if_test` conditionals. The job returned **no measurement data.**
+
+**Correction.** The integrity gate is flattened to a **single** `if_test` on one 2-bit
+integrity register `ci` (`ci[0]`=approval, `ci[1]`=fresh execution-verify), firing the
+payload iff `ci == 0b11` (both bits set). This is exactly the **single-register
+feedforward pattern proven to run in ARK-442** on the same backend. Mid-circuit `reset`
+is retained (top-level only, never inside a conditional — a supported primitive). The
+**measurable semantics are identical**: the payload fires iff the approval AND the fresh
+execution-time verification are both 1; every alteration/replay arm still fails closed by
+driving the execution-verify bit to 0. Register `cp` (payload readout, PRIMARY endpoint)
+is unchanged. Verified by real-backend transpilation: exactly 1 non-nested `if_else` and 1
+top-level `reset` per arm.
+
+**Scientific-integrity statement.** Because the v1.0 job produced **zero data**, this is a
+**pre-data technical correction**, not a post-hoc rescue of an unfavorable result. "No
+Rescue After Failure" governs re-running to escape a measured FAIL; here there was no
+measurement to rescue. No metric, ceiling, arm definition, qubit selection (Q_A=5, Q_P=6),
+shot count, or decision rule (Fields 17/20–22) is changed by this amendment. The errored
+job ID above is retained permanently in the record. The re-locked circuit generator
+(`ark_444_circuits.py` v1.1) and a refreshed `MANIFEST.txt` are committed **before** the
+corrected principal job is submitted. The corrected run is tagged `ark-444-v1.0` (first
+run to yield data); this amendment and the errored job ID document the full provenance.
+
+---
+
 *ARK-444 Preregistration — Remnant Fieldworks Inc. / Derek Hone — 2026-07-16. No hardware job is submitted until this document and its manifest are committed. This is a metrological characterization of a tamper-evident decision-to-execution binding, not new physics and not a cryptographic integrity guarantee. No Rescue After Failure.*
