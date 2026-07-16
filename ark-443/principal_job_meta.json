@@ -1,0 +1,47 @@
+{
+  "experiment_id": "ARK-443",
+  "principal_job_id": "d9cn04kjeosc73fgg8cg",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "initial_layout": [
+    14,
+    34,
+    54,
+    140
+  ],
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_0of3_deny",
+    "arm2_1of3_deny",
+    "arm3_2of3_allow",
+    "arm4_3of3_allow",
+    "arm5_1of3_altchannel_deny",
+    "arm6_degraded_quorum_allow",
+    "arm7_replay_tamper_deny",
+    "arm8_idle_spam"
+  ],
+  "arm_class": {
+    "arm1_0of3_deny": "deny_0of3",
+    "arm2_1of3_deny": "deny_1of3",
+    "arm3_2of3_allow": "allow_2of3",
+    "arm4_3of3_allow": "allow_3of3",
+    "arm5_1of3_altchannel_deny": "deny_1of3_alt",
+    "arm6_degraded_quorum_allow": "allow_degraded",
+    "arm7_replay_tamper_deny": "deny_replay",
+    "arm8_idle_spam": "idle_spam"
+  },
+  "arm_expect": {
+    "arm1_0of3_deny": "DENY",
+    "arm2_1of3_deny": "DENY",
+    "arm3_2of3_allow": "ALLOW",
+    "arm4_3of3_allow": "ALLOW",
+    "arm5_1of3_altchannel_deny": "DENY",
+    "arm6_degraded_quorum_allow": "ALLOW",
+    "arm7_replay_tamper_deny": "DENY",
+    "arm8_idle_spam": "SPAM"
+  },
+  "optimization_level": 1,
+  "dynamical_decoupling": false,
+  "submitted_utc": "2026-07-16T23:58:08.546645+00:00",
+  "spam_job_id": "d9cmvdkinv1c73ao0g00"
+}
