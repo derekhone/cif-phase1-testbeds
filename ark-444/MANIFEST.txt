@@ -1,0 +1,17 @@
+ARK-444 — Decision-to-Execution Integrity
+Remnant Fieldworks Inc. — Derek Hone
+SHA-256 MANIFEST (preregistration LOCK, v1.1 control-flow correction)
+Protocol: Proof Before Power. Prediction Before Measurement. No Rescue After Failure.
+This MANIFEST is committed BEFORE the corrected principal job is submitted (Field 27 + Amendment v1.1).
+v1.0 nested-if job d9cmdvsjeosc73fgfk5g ERRORED (code 1524, zero data); circuits flattened to single-register if_test.
+Generated (UTC): 2026-07-16T23:24:38.494824+00:00
+
+2d1811158077ce5558bfdf6fe6a96b99e497dce0c5d3a1ca2b155c1d023d0783  ARK_444_preregistration.md
+67cb6c0b601423c3af22e084231d9339be068a4e467f7d8db1a075932ca575aa  README.md
+a262b953489d61914f21d492a27cdae4b8b2a04525c42a42856452e817a7ec59  RESULTS.md
+49cde418c360a0a4b8b7e724a8769b27eca2824028e59a0daf2338d9fa05a5df  ark_444_select_qubits.py
+b127d736a3479aceb4276b85165c63d04960bf13d8235b7baa4a5298db9e128f  ark_444_circuits.py
+0b8b6d897de44da2d363e30071108d98682e1dc970b6a8fc73a8fb4f9faa636a  ark_444_spam_job.py
+6d88f1f212b6396442125fda7888551e701c9837a0150ec0cc78fe9ad92df68c  ark_444_submit_ibm.py
+5697fcd4a34990b9362b149e2422e8675934199d9abaee1bd38649409e8e91ab  ark_444_retrieve.py
+1c8f3d1d2ea74d56e29e51e77775a28caa47361331f7241b000e4f83dad2f3db  ark_444_analysis.py

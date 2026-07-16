@@ -1,0 +1,6 @@
+qiskit_runtime_service._discover_account:WARNING:2026-07-16 23:11:28,848: Loading account with the given token. A saved account will not be used.
+[SELECT] backend=ibm_marrakesh qubits=156 qualifying_pairs=92
+[SELECT] SELECTED Q_A=5 (RE=0.4883%) Q_P=6 (RE=0.4028%) sum=0.8911%
+[SELECT] top5 qualifying (by sum): [5, 6]=0.8911%; [140, 141]=0.9033%; [85, 86]=0.9644%; [54, 55]=1.0498%; [133, 134]=1.0498%
+[SELECT] wrote /home/ubuntu/github_repos/uip-phase1-testbeds/ark-444/calibration_snapshot_marrakesh_20260716.json
+[SELECT] wrote /home/ubuntu/github_repos/uip-phase1-testbeds/ark-444/selected_qubits.json

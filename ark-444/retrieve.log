@@ -1,0 +1,11 @@
+qiskit_runtime_service._discover_account:WARNING:2026-07-16 23:25:13,058: Loading account with the given token. A saved account will not be used.
+[RETRIEVE] job d9cmgi9htsac739bv2mg status = RUNNING
+[RETRIEVE] arm1_approved_unchanged: P(Q_P=1)=0.9808 counts={'1': 8035, '0': 157}
+[RETRIEVE] arm2_destination_changed: P(Q_P=1)=0.0087 counts={'0': 8121, '1': 71}
+[RETRIEVE] arm3_amount_changed: P(Q_P=1)=0.0101 counts={'0': 8109, '1': 83}
+[RETRIEVE] arm4_operation_changed: P(Q_P=1)=0.0082 counts={'0': 8125, '1': 67}
+[RETRIEVE] arm5_extra_action_appended: P(Q_P=1)=0.0112 counts={'0': 8100, '1': 92}
+[RETRIEVE] arm6_approval_replayed: P(Q_P=1)=0.0002 counts={'0': 8190, '1': 2}
+[RETRIEVE] arm7_mutated_then_reverified: P(Q_P=1)=0.9781 counts={'1': 8013, '0': 179}
+[RETRIEVE] arm8_idle_spam: P(Q_P=1)=0.0000 counts={'0': 8192}
+[RETRIEVE] wrote /home/ubuntu/github_repos/uip-phase1-testbeds/ark-444/raw_results.json
