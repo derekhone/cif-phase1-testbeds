@@ -1,0 +1,63 @@
+{
+  "experiment_id": "ARK-442",
+  "backend": "ibm_marrakesh",
+  "selection_rule": "RE < 0.020 on both, directly connected, min sum of readout errors",
+  "Q_A": 5,
+  "Q_P": 6,
+  "readout_error_Q_A": 0.0048828125,
+  "readout_error_Q_P": 0.0040283203125,
+  "sum_readout_error": 0.0089111328125,
+  "initial_layout": [
+    5,
+    6
+  ],
+  "num_qualifying_pairs": 92,
+  "top5_qualifying": [
+    {
+      "pair": [
+        5,
+        6
+      ],
+      "re_a": 0.0048828125,
+      "re_b": 0.0040283203125,
+      "sum": 0.0089111328125
+    },
+    {
+      "pair": [
+        140,
+        141
+      ],
+      "re_a": 0.0030517578125,
+      "re_b": 0.0059814453125,
+      "sum": 0.009033203125
+    },
+    {
+      "pair": [
+        85,
+        86
+      ],
+      "re_a": 0.004638671875,
+      "re_b": 0.0050048828125,
+      "sum": 0.0096435546875
+    },
+    {
+      "pair": [
+        54,
+        55
+      ],
+      "re_a": 0.0018310546875,
+      "re_b": 0.0086669921875,
+      "sum": 0.010498046875
+    },
+    {
+      "pair": [
+        133,
+        134
+      ],
+      "re_a": 0.0062255859375,
+      "re_b": 0.0042724609375,
+      "sum": 0.010498046875
+    }
+  ],
+  "frozen_utc": "2026-07-16T22:27:54.556830+00:00"
+}
