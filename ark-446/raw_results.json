@@ -1,0 +1,91 @@
+{
+  "experiment_id": "ARK-446",
+  "principal_job_id": "d9cldtkjeosc73fgeamg",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "initial_layout": [
+    5,
+    6
+  ],
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow",
+    "arm2_deny",
+    "arm3_ungated_control",
+    "arm4_idle_spam",
+    "arm5_stale_auth",
+    "arm6_replayed_auth",
+    "arm7_superposition_auth",
+    "arm8_payload_readout_ref"
+  ],
+  "spam_job_id": "d9cl2skinv1c73anu8eg",
+  "retrieved_utc": "2026-07-16T22:13:08.452747+00:00",
+  "final_status": "DONE",
+  "arms": {
+    "arm1_allow": {
+      "counts": {
+        "1": 8098,
+        "0": 94
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.988525390625
+    },
+    "arm2_deny": {
+      "counts": {
+        "0": 8173,
+        "1": 19
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0023193359375
+    },
+    "arm3_ungated_control": {
+      "counts": {
+        "1": 8157,
+        "0": 35
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9957275390625
+    },
+    "arm4_idle_spam": {
+      "counts": {
+        "0": 8189,
+        "1": 3
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0003662109375
+    },
+    "arm5_stale_auth": {
+      "counts": {
+        "1": 8046,
+        "0": 146
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.982177734375
+    },
+    "arm6_replayed_auth": {
+      "counts": {
+        "0": 8177,
+        "1": 15
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0018310546875
+    },
+    "arm7_superposition_auth": {
+      "counts": {
+        "1": 4120,
+        "0": 4072
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.5029296875
+    },
+    "arm8_payload_readout_ref": {
+      "counts": {
+        "1": 8151,
+        "0": 41
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9949951171875
+    }
+  },
+  "primary_endpoint": "raw counts, no readout mitigation"
+}

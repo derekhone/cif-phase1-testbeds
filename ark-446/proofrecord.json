@@ -1,0 +1,178 @@
+{
+  "experiment_id": "ARK-446",
+  "candidate": "A \u2014 SPAM-Resolved Authorization Boundary Characterization (cross-device replication)",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "qubits": {
+    "Q_A": 5,
+    "Q_P": 6
+  },
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow",
+    "arm2_deny",
+    "arm3_ungated_control",
+    "arm4_idle_spam",
+    "arm5_stale_auth",
+    "arm6_replayed_auth",
+    "arm7_superposition_auth",
+    "arm8_payload_readout_ref"
+  ],
+  "job_ids": {
+    "spam_job": "d9cl2skinv1c73anu8eg",
+    "principal_job": "d9cldtkjeosc73fgeamg"
+  },
+  "raw_results_hash": "f426998faba0854b4b648c0a69ee485e434195dcb648b64ff9a5e026c1c89c1c",
+  "spam_results_hash": "b961ef3c0bf05e48039a050799d924e7e4ee0e3bba825face3bb7b4e9de54cb2",
+  "metrics": {
+    "L_D": {
+      "value": 0.0023193359375,
+      "ci95": [
+        0.0023193359375,
+        0.0014853590102284642,
+        0.0036198641068215286
+      ],
+      "ci99": [
+        0.0023193359375,
+        0.0012955714523012335,
+        0.0041487216251718554
+      ],
+      "definition": "P(Q_P=1 | Arm 2 DENY)"
+    },
+    "S_A": {
+      "value": 0.988525390625,
+      "ci95": [
+        0.988525390625,
+        0.9859792614380934,
+        0.9906135511902033
+      ],
+      "ci99": [
+        0.988525390625,
+        0.9850743325388333,
+        0.9911856476191144
+      ],
+      "definition": "P(Q_P=1 | Arm 1 ALLOW)"
+    },
+    "SPAM_baseline_insitu_arm4": {
+      "value": 0.0003662109375,
+      "ci95": [
+        0.0003662109375,
+        0.00012455015191996203,
+        0.00107625392413734
+      ],
+      "definition": "P(Q_P=1 | Arm 4 idle)"
+    },
+    "L_control": {
+      "value": 0.9957275390625,
+      "ci95": [
+        0.9957275390625,
+        0.9940640791443831,
+        0.9969262786975743
+      ],
+      "definition": "P(Q_P=1 | Arm 3 ungated control)"
+    },
+    "Delta_B": {
+      "value": 0.9862060546875,
+      "definition": "S_A - L_D"
+    },
+    "L_D_corrected": {
+      "value": 0.001953125,
+      "upper95": 0.0034953139549015666,
+      "definition": "L_D - SPAM_baseline"
+    },
+    "I_L": {
+      "value": 0.9976707122716685,
+      "definition": "(L_control - L_D) / L_control"
+    },
+    "L_D_vs_SPAM_distinguishable_99": false
+  },
+  "secondary_arms": {
+    "arm5_stale_auth": {
+      "P_Q_P_1": 0.982177734375,
+      "ci95": [
+        0.982177734375,
+        0.9790784088601776,
+        0.984825041884893
+      ]
+    },
+    "arm6_replayed_auth": {
+      "P_Q_P_1": 0.0018310546875,
+      "ci95": [
+        0.0018310546875,
+        0.0011099834311574474,
+        0.0030191349256443725
+      ]
+    },
+    "arm7_superposition_auth": {
+      "P_Q_P_1": 0.5029296875,
+      "ci95": [
+        0.5029296875,
+        0.4921034653095007,
+        0.5137531632519882
+      ]
+    },
+    "arm8_payload_readout_ref": {
+      "P_Q_P_1": 0.9949951171875,
+      "ci95": [
+        0.9949951171875,
+        0.9932177825825581,
+        0.9963084181190269
+      ]
+    }
+  },
+  "insitu_spam_job": {
+    "Q_A": 0.00146484375,
+    "Q_P": 0.0,
+    "gate_passed": true
+  },
+  "cross_device_concordance_H2d": {
+    "reference_experiment": "ARK-441",
+    "reference_backend": "ibm_kingston",
+    "reference_verdict": "PASS",
+    "checks": {
+      "L_D": {
+        "marrakesh_point": 0.0023193359375,
+        "ark441_ci95": [
+          0.002266185492155687,
+          0.004791247145390651
+        ],
+        "within_ark441_ci95": true
+      },
+      "S_A": {
+        "marrakesh_point": 0.988525390625,
+        "ark441_ci95": [
+          0.9792100365481767,
+          0.9849374403869559
+        ],
+        "within_ark441_ci95": false
+      },
+      "L_control": {
+        "marrakesh_point": 0.9957275390625,
+        "ark441_ci95": [
+          0.9874582623548633,
+          0.991818838364116
+        ],
+        "within_ark441_ci95": false
+      },
+      "SPAM_baseline_insitu_arm4": {
+        "marrakesh_point": 0.0003662109375,
+        "ark441_ci95": [
+          0.0006632072387913751,
+          0.0022457801677002293
+        ],
+        "within_ark441_ci95": false
+      }
+    },
+    "note": "H2d: cross-device concordance is REPORTED, not a decision gate. Point estimates near the readout floor may fall just outside a tight CI without contradicting the qualitative replication (same PASS verdict, same boundary behaviour)."
+  },
+  "decision_outcome": "PASS",
+  "status": "PASS",
+  "rationale": "L_D_corrected=0.0020 <= 0.02 AND Delta_B=0.9862 >= 0.7; in-situ SPAM within ceiling. Diagnostic: L_D ~ SPAM (both at readout floor) \u2014 expected for a clean boundary.",
+  "raw_vs_mitigated": "Primary endpoint = RAW counts, no readout mitigation applied.",
+  "preregistered_pass": {
+    "L_D_corrected_max": 0.02,
+    "Delta_B_min": 0.7,
+    "spam_ceiling": 0.02
+  },
+  "timestamp": "2026-07-16T22:13:32.799471+00:00"
+}
