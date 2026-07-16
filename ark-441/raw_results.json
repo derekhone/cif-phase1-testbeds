@@ -1,0 +1,98 @@
+{
+  "experiment_id": "ARK-441",
+  "principal_job_id": "d9c8ij41osis73bjhldg",
+  "backend": "ibm_kingston",
+  "instance": "open-instance",
+  "initial_layout": [
+    5,
+    6
+  ],
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow",
+    "arm2_deny",
+    "arm3_ungated_control",
+    "arm4_idle_spam",
+    "arm5_stale_auth",
+    "arm6_replayed_auth",
+    "arm7_superposition_auth",
+    "arm8_payload_readout_ref"
+  ],
+  "spam_job_id": "d9c7lf7ngvls73a941jg",
+  "retrieved_utc": "2026-07-16T07:38:35.530536+00:00",
+  "final_status": "DONE",
+  "arms": {
+    "arm1_allow": {
+      "counts": {
+        "1": 8047,
+        "0": 145
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9822998046875
+    },
+    "arm2_deny": {
+      "counts": {
+        "0": 8165,
+        "1": 27
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0032958984375
+    },
+    "arm3_ungated_control": {
+      "counts": {
+        "1": 8109,
+        "0": 83
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9898681640625
+    },
+    "arm4_idle_spam": {
+      "counts": {
+        "0": 8182,
+        "1": 10
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.001220703125
+    },
+    "arm5_stale_auth": {
+      "counts": {
+        "1": 8039,
+        "0": 153
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9813232421875
+    },
+    "arm6_replayed_auth": {
+      "counts": {
+        "0": 8165,
+        "1": 27
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0032958984375
+    },
+    "arm7_superposition_auth": {
+      "counts": {
+        "1": 4136,
+        "0": 4056
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.5048828125
+    },
+    "arm8_payload_readout_ref": {
+      "counts": {
+        "1": 8110,
+        "0": 82
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.989990234375
+    }
+  },
+  "primary_endpoint": "raw counts, no readout mitigation",
+  "job_metrics": {
+    "timestamps": {
+      "created": "2026-07-16T07:33:32.477628Z",
+      "finished": "2026-07-16T07:38:34.73437Z",
+      "running": "2026-07-16T07:38:04.838785Z"
+    }
+  }
+}
