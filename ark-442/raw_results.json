@@ -1,0 +1,97 @@
+{
+  "experiment_id": "ARK-442",
+  "principal_job_id": "d9clom4jeosc73fgeq3g",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "initial_layout": [
+    5,
+    6
+  ],
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow_immediate",
+    "arm2_allow_short_delay",
+    "arm3_allow_medium_delay",
+    "arm4_allow_long_delay",
+    "arm5_expired_auth_deny",
+    "arm6_replayed_after_expiry",
+    "arm7_reverified_after_expiry",
+    "arm8_idle_spam"
+  ],
+  "arm_delay_ns": {
+    "arm1_allow_immediate": 0,
+    "arm2_allow_short_delay": 500,
+    "arm3_allow_medium_delay": 1000,
+    "arm4_allow_long_delay": 2000
+  },
+  "spam_job_id": "d9clmusjeosc73fgeo10",
+  "retrieved_utc": "2026-07-16T22:37:15.210371+00:00",
+  "final_status": "RUNNING",
+  "arms": {
+    "arm1_allow_immediate": {
+      "counts": {
+        "1": 8092,
+        "0": 100
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.98779296875
+    },
+    "arm2_allow_short_delay": {
+      "counts": {
+        "1": 8097,
+        "0": 95
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9884033203125
+    },
+    "arm3_allow_medium_delay": {
+      "counts": {
+        "1": 8082,
+        "0": 110
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.986572265625
+    },
+    "arm4_allow_long_delay": {
+      "counts": {
+        "1": 8054,
+        "0": 138
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.983154296875
+    },
+    "arm5_expired_auth_deny": {
+      "counts": {
+        "0": 8191,
+        "1": 1
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0001220703125
+    },
+    "arm6_replayed_after_expiry": {
+      "counts": {
+        "0": 8180,
+        "1": 12
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.00146484375
+    },
+    "arm7_reverified_after_expiry": {
+      "counts": {
+        "1": 8123,
+        "0": 69
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9915771484375
+    },
+    "arm8_idle_spam": {
+      "counts": {
+        "0": 8191,
+        "1": 1
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0001220703125
+    }
+  },
+  "primary_endpoint": "raw counts, no readout mitigation"
+}
