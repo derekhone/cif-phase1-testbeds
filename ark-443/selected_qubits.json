@@ -1,0 +1,56 @@
+{
+  "experiment_id": "ARK-443",
+  "backend": "ibm_marrakesh",
+  "selection_rule": "4 lowest-RE qubits with RE < 0.020, NO connectivity constraint (classical feedforward, no 2q gates); lowest-RE -> Q_P; remaining three by ascending physical index -> Q_A1,Q_A2,Q_A3",
+  "Q_P": 14,
+  "Q_A1": 34,
+  "Q_A2": 54,
+  "Q_A3": 140,
+  "readout_error_Q_P": 0.001708984375,
+  "readout_error_Q_A1": 0.0030517578125,
+  "readout_error_Q_A2": 0.0018310546875,
+  "readout_error_Q_A3": 0.0030517578125,
+  "max_readout_error": 0.0030517578125,
+  "initial_layout": [
+    14,
+    34,
+    54,
+    140
+  ],
+  "num_qualifying_qubits": 112,
+  "top8_qualifying": [
+    {
+      "qubit": 14,
+      "re": 0.001708984375
+    },
+    {
+      "qubit": 54,
+      "re": 0.0018310546875
+    },
+    {
+      "qubit": 34,
+      "re": 0.0030517578125
+    },
+    {
+      "qubit": 140,
+      "re": 0.0030517578125
+    },
+    {
+      "qubit": 2,
+      "re": 0.003662109375
+    },
+    {
+      "qubit": 6,
+      "re": 0.0040283203125
+    },
+    {
+      "qubit": 0,
+      "re": 0.0042724609375
+    },
+    {
+      "qubit": 134,
+      "re": 0.0042724609375
+    }
+  ],
+  "frozen_utc": "2026-07-16T23:55:50.567506+00:00"
+}
