@@ -1,0 +1,218 @@
+{
+  "experiment_id": "ARK-442",
+  "title": "Authorization Boundary Degradation Under Verification-to-Execution Delay",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "qubits": {
+    "Q_A": 5,
+    "Q_P": 6
+  },
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow_immediate",
+    "arm2_allow_short_delay",
+    "arm3_allow_medium_delay",
+    "arm4_allow_long_delay",
+    "arm5_expired_auth_deny",
+    "arm6_replayed_after_expiry",
+    "arm7_reverified_after_expiry",
+    "arm8_idle_spam"
+  ],
+  "arm_delay_ns": {
+    "arm1_allow_immediate": 0,
+    "arm2_allow_short_delay": 500,
+    "arm3_allow_medium_delay": 1000,
+    "arm4_allow_long_delay": 2000
+  },
+  "job_ids": {
+    "spam_job": "d9clmusjeosc73fgeo10",
+    "principal_job": "d9clom4jeosc73fgeq3g"
+  },
+  "raw_results_hash": "9cdb2c23a64eddb959c19b3690a24d8eb6b4a548f516301c61319e0912c459d8",
+  "spam_results_hash": "7be11dad6cd91b935d81047cada115ba60539cc7374b63e82bc3ffe63a1f52ab",
+  "metrics": {
+    "S_A_0": {
+      "value": 0.98779296875,
+      "ci95": [
+        0.98779296875,
+        0.9851759856277033,
+        0.9899526698602213
+      ],
+      "definition": "P(Q_P=1 | Arm 1 ALLOW immediate, 0 us)"
+    },
+    "S_A_short": {
+      "value": 0.9884033203125,
+      "ci95": [
+        0.9884033203125,
+        0.9858452235034658,
+        0.9905035629347689
+      ],
+      "definition": "P(Q_P=1 | Arm 2 ALLOW ~0.5 us)"
+    },
+    "S_A_medium": {
+      "value": 0.986572265625,
+      "ci95": [
+        0.986572265625,
+        0.9838419130622974,
+        0.9888464805250067
+      ],
+      "definition": "P(Q_P=1 | Arm 3 ALLOW ~1.0 us)"
+    },
+    "S_A_long": {
+      "value": 0.983154296875,
+      "ci95": [
+        0.983154296875,
+        0.980132426038219,
+        0.9857232342273478
+      ],
+      "definition": "P(Q_P=1 | Arm 4 ALLOW ~2.0 us)"
+    },
+    "L_expired": {
+      "value": 0.0001220703125,
+      "ci95": [
+        0.0001220703125,
+        2.154817829997204e-05,
+        0.0006912035176332436
+      ],
+      "ci99": [
+        0.0001220703125,
+        1.4330383684663366e-05,
+        0.0010389882702894098
+      ],
+      "definition": "P(Q_P=1 | Arm 5 expired-auth) PRIMARY"
+    },
+    "L_replayed": {
+      "value": 0.00146484375,
+      "ci95": [
+        0.00146484375,
+        0.000838166249815637,
+        0.0025588735368000538
+      ],
+      "ci99": [
+        0.00146484375,
+        0.0007078778902485632,
+        0.003028814022530464
+      ],
+      "definition": "P(Q_P=1 | Arm 6 replayed-auth) PRIMARY"
+    },
+    "S_reverified": {
+      "value": 0.9915771484375,
+      "ci95": [
+        0.9915771484375,
+        0.9893547891996582,
+        0.9933386781801897
+      ],
+      "ci95_lower": 0.9893547891996582,
+      "definition": "P(Q_P=1 | Arm 7 reverified ALLOW)"
+    },
+    "SPAM_baseline_arm8": {
+      "value": 0.0001220703125,
+      "ci95": [
+        0.0001220703125,
+        2.154817829997204e-05,
+        0.0006912035176332436
+      ],
+      "definition": "P(Q_P=1 | Arm 8 idle)"
+    },
+    "Delta_B": {
+      "value": 0.9876708984375,
+      "definition": "S_A_0 - L_expired"
+    },
+    "L_expired_corrected": {
+      "value": 0.0,
+      "upper95": 0.0006696553393332716,
+      "definition": "L_expired - SPAM_baseline"
+    },
+    "L_replayed_corrected": {
+      "value": 0.0013427734375,
+      "upper95": 0.0025373253585000816,
+      "definition": "L_replayed - SPAM_baseline"
+    }
+  },
+  "delay_decay_curve": [
+    {
+      "arm": "arm1_allow_immediate",
+      "delay_us": 0.0,
+      "S_A": 0.98779296875,
+      "ci95": [
+        0.98779296875,
+        0.9851759856277033,
+        0.9899526698602213
+      ]
+    },
+    {
+      "arm": "arm2_allow_short_delay",
+      "delay_us": 0.5,
+      "S_A": 0.9884033203125,
+      "ci95": [
+        0.9884033203125,
+        0.9858452235034658,
+        0.9905035629347689
+      ]
+    },
+    {
+      "arm": "arm3_allow_medium_delay",
+      "delay_us": 1.0,
+      "S_A": 0.986572265625,
+      "ci95": [
+        0.986572265625,
+        0.9838419130622974,
+        0.9888464805250067
+      ]
+    },
+    {
+      "arm": "arm4_allow_long_delay",
+      "delay_us": 2.0,
+      "S_A": 0.983154296875,
+      "ci95": [
+        0.983154296875,
+        0.980132426038219,
+        0.9857232342273478
+      ]
+    }
+  ],
+  "secondary_hypotheses": {
+    "H2a_delay_decay_monotone": {
+      "S_A_by_delay_us": {
+        "0.0": 0.98779296875,
+        "0.5": 0.9884033203125,
+        "1.0": 0.986572265625,
+        "2.0": 0.983154296875
+      },
+      "monotone_non_increasing": false,
+      "note": "Descriptive decay curve (T1/T2 of the payload during the delay). No pass/fail weight."
+    },
+    "H2b_replay_indistinguishable_from_expiry": {
+      "L_expired": 0.0001220703125,
+      "L_replayed": 0.00146484375,
+      "overlap_99CI": true,
+      "note": "A replayed stale bit is no better than an expired one."
+    },
+    "H2c_reverification_concordance": {
+      "S_A_0": 0.98779296875,
+      "S_reverified": 0.9915771484375,
+      "overlap_95CI": true,
+      "note": "Reverification restores ALLOW within the immediate ALLOW 95% CI."
+    }
+  },
+  "insitu_spam_job": {
+    "Q_A": 0.00390625,
+    "Q_P": 0.00048828125,
+    "gate_passed": true,
+    "drift_vs_arm8": 0.0003662109375,
+    "drift_ok": true
+  },
+  "decision_outcome": "PASS",
+  "status": "PASS",
+  "rationale": "L_expired_corrected=0.0000 <= 0.02 AND L_replayed_corrected=0.0013 <= 0.02 AND S_reverified=0.9916 >= 0.9 AND Delta_B=0.9877 >= 0.7; in-situ SPAM within ceiling. Expired and replayed authorizations do not execute the payload; fresh reverification restores ALLOW.",
+  "raw_vs_mitigated": "Primary endpoint = RAW counts, no readout mitigation applied.",
+  "preregistered_pass": {
+    "L_D_corrected_max": 0.02,
+    "S_reverified_min": 0.9,
+    "Delta_B_min": 0.7,
+    "spam_ceiling": 0.02,
+    "drift_ceiling": 0.005
+  },
+  "interpretation": "Metrological characterization of decoherence-driven erosion of the verify-then-execute authorization boundary under verification-to-execution delay. NOT new physics, NOT a cryptographic claim. Findings apply only to this boundary implementation on this qubit pair on this backend at this calibration.",
+  "timestamp": "2026-07-16T22:39:09.143385+00:00"
+}
