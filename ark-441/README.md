@@ -1,5 +1,7 @@
 # ARK-441 — SPAM-Resolved Authorization Boundary Characterization
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21398676.svg)](https://doi.org/10.5281/zenodo.21398676)
+
 **Remnant Fieldworks Inc. — Derek Hone**
 **Backend:** IBM Quantum `ibm_kingston` (Heron r2) · **Qubits:** Q_A=5, Q_P=6 · **Instance:** open-instance
 **Governing principle:** *Proof Before Power. Prediction Before Measurement. No Rescue After Failure.*
