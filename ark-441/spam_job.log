@@ -1,0 +1,10 @@
+qiskit_runtime_service._discover_account:WARNING:2026-07-16 06:31:19,270: Loading account with the given token. A saved account will not be used.
+[SPAM] submitting 4 circuits x 2048 shots to ibm_kingston ...
+[SPAM] job_id = d9c7lf7ngvls73a941jg
+[SPAM] Q5 prep|0>: P(1)=0.0029 P(0)=0.9971 counts={'0': 2042, '1': 6}
+[SPAM] Q5 prep|1>: P(1)=0.9873 P(0)=0.0127 counts={'1': 2022, '0': 26}
+[SPAM] Q6 prep|0>: P(1)=0.0015 P(0)=0.9985 counts={'0': 2045, '1': 3}
+[SPAM] Q6 prep|1>: P(1)=0.9893 P(0)=0.0107 counts={'1': 2026, '0': 22}
+[SPAM] wrote /home/ubuntu/ark441/spam_results.json
+[SPAM] Q5 baseline=0.0029 Q6 baseline=0.0015 gate_passed=True
+[SPAM] PASS: baselines within ceiling. Principal job may proceed.

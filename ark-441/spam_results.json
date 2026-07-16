@@ -1,0 +1,81 @@
+{
+  "experiment_id": "ARK-441",
+  "job_type": "in_situ_spam",
+  "backend": "ibm_kingston",
+  "instance": "open-instance",
+  "physical_qubits": {
+    "Q5": 5,
+    "Q6": 6
+  },
+  "shots_per_circuit": 2048,
+  "spam_ceiling": 0.02,
+  "spam_job_id": "d9c7lf7ngvls73a941jg",
+  "submitted_utc": "2026-07-16T06:31:22.478245+00:00",
+  "completed_utc": "2026-07-16T07:32:13.493652+00:00",
+  "per_circuit": [
+    {
+      "qubit": "Q5",
+      "physical": 5,
+      "prepared": "0",
+      "counts": {
+        "0": 2042,
+        "1": 6
+      },
+      "total": 2048,
+      "P_read_1": 0.0029296875,
+      "P_read_0": 0.9970703125
+    },
+    {
+      "qubit": "Q5",
+      "physical": 5,
+      "prepared": "1",
+      "counts": {
+        "1": 2022,
+        "0": 26
+      },
+      "total": 2048,
+      "P_read_1": 0.9873046875,
+      "P_read_0": 0.0126953125
+    },
+    {
+      "qubit": "Q6",
+      "physical": 6,
+      "prepared": "0",
+      "counts": {
+        "0": 2045,
+        "1": 3
+      },
+      "total": 2048,
+      "P_read_1": 0.00146484375,
+      "P_read_0": 0.99853515625
+    },
+    {
+      "qubit": "Q6",
+      "physical": 6,
+      "prepared": "1",
+      "counts": {
+        "1": 2026,
+        "0": 22
+      },
+      "total": 2048,
+      "P_read_1": 0.9892578125,
+      "P_read_0": 0.0107421875
+    }
+  ],
+  "qubit_metrics": {
+    "Q5": {
+      "p01_false_one_when_zero": 0.0029296875,
+      "p10_false_zero_when_one": 0.0126953125,
+      "spam_baseline": 0.0029296875,
+      "passes_ceiling": true
+    },
+    "Q6": {
+      "p01_false_one_when_zero": 0.00146484375,
+      "p10_false_zero_when_one": 0.0107421875,
+      "spam_baseline": 0.00146484375,
+      "passes_ceiling": true
+    }
+  },
+  "spam_gate_passed": true,
+  "kill_condition": "SPAM_baseline (p01) > 0.02 on either qubit => INDETERMINATE"
+}

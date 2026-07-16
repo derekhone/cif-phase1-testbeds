@@ -1,0 +1,117 @@
+{
+  "backend": "ibm_kingston",
+  "processor_family": "Heron r2",
+  "retrieval_timestamp": "2026-07-16T06:11:57Z",
+  "instance": "open-instance",
+  "recommended_pair": {
+    "Q_A": 5,
+    "Q_P": 6
+  },
+  "recommended_pair_rationale": "Lowest combined readout error among connected qualifying pairs (both < 2%)",
+  "qualifying_pairs_ranked": [
+    {
+      "pair": [
+        5,
+        6
+      ],
+      "RE_A": 0.005005,
+      "RE_P": 0.006714,
+      "sum": 0.011719
+    },
+    {
+      "pair": [
+        8,
+        9
+      ],
+      "RE_A": 0.009277,
+      "RE_P": 0.005249,
+      "sum": 0.014526
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "RE_A": 0.012207,
+      "RE_P": 0.005005,
+      "sum": 0.017212
+    },
+    {
+      "pair": [
+        4,
+        5
+      ],
+      "RE_A": 0.01355,
+      "RE_P": 0.005005,
+      "sum": 0.018555
+    }
+  ],
+  "all_qubits_0_to_9": {
+    "0": {
+      "T1_us": 289.78,
+      "T2_us": 353.38,
+      "readout_error": 0.009399
+    },
+    "1": {
+      "T1_us": 317.52,
+      "T2_us": 450.06,
+      "readout_error": 0.012207
+    },
+    "2": {
+      "T1_us": 210.88,
+      "T2_us": 109.81,
+      "readout_error": 0.005005
+    },
+    "3": {
+      "T1_us": 166.97,
+      "T2_us": 237.39,
+      "readout_error": 0.020142,
+      "disqualified": "RE >= 2%"
+    },
+    "4": {
+      "T1_us": 184.78,
+      "T2_us": 52.81,
+      "readout_error": 0.01355
+    },
+    "5": {
+      "T1_us": 145.7,
+      "T2_us": 63.9,
+      "readout_error": 0.005005
+    },
+    "6": {
+      "T1_us": 240.01,
+      "T2_us": 104.27,
+      "readout_error": 0.006714
+    },
+    "7": {
+      "T1_us": 103.08,
+      "T2_us": 53.0,
+      "readout_error": 0.018799
+    },
+    "8": {
+      "T1_us": 254.11,
+      "T2_us": 79.64,
+      "readout_error": 0.009277
+    },
+    "9": {
+      "T1_us": 128.05,
+      "T2_us": 42.37,
+      "readout_error": 0.005249
+    }
+  },
+  "sample_two_qubit_gate_errors": {
+    "72-73": 0.001429,
+    "73-72": 0.001429,
+    "7-17": 0.00664,
+    "17-7": 0.00664,
+    "67-68": 0.001388
+  },
+  "ark441_selection_rule": "readout_error < 0.020 on both qubits; directly connected; minimum sum of readout errors",
+  "vbe1_comparison": {
+    "vbe1_backend": "ibm_kingston",
+    "vbe1_idle_baseline": 0.135,
+    "vbe1_deny_leakage": 0.1262,
+    "vbe1_outcome": "KILL \u2014 SPAM dominated",
+    "ark441_expected_idle_baseline_Q5Q6": "~0.5-0.7% based on calibration"
+  }
+}
