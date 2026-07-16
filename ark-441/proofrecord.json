@@ -1,0 +1,155 @@
+{
+  "experiment_id": "ARK-441",
+  "candidate": "A \u2014 SPAM-Resolved Authorization Boundary Characterization",
+  "backend": "ibm_kingston",
+  "instance": "open-instance",
+  "qubits": {
+    "Q_A": 5,
+    "Q_P": 6
+  },
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow",
+    "arm2_deny",
+    "arm3_ungated_control",
+    "arm4_idle_spam",
+    "arm5_stale_auth",
+    "arm6_replayed_auth",
+    "arm7_superposition_auth",
+    "arm8_payload_readout_ref"
+  ],
+  "job_ids": {
+    "spam_job": "d9c7lf7ngvls73a941jg",
+    "principal_job": "d9c8ij41osis73bjhldg"
+  },
+  "raw_results_hash": "d2afc9c8ea87e6b0bae666d16dc0610792897d1107f6def96a34bf5bc6c81cc0",
+  "spam_results_hash": "7220ffa1f5eb8f8a3d2b96f1fd4b60496ebe28e4558f63a4578eb345a6736701",
+  "metrics": {
+    "L_D": {
+      "value": 0.0032958984375,
+      "ci95": [
+        0.0032958984375,
+        0.002266185492155687,
+        0.004791247145390651
+      ],
+      "ci99": [
+        0.0032958984375,
+        0.0020184997127963367,
+        0.005377337552898536
+      ],
+      "definition": "P(Q_P=1 | Arm 2 DENY)"
+    },
+    "S_A": {
+      "value": 0.9822998046875,
+      "ci95": [
+        0.9822998046875,
+        0.9792100365481767,
+        0.9849374403869559
+      ],
+      "ci99": [
+        0.9822998046875,
+        0.978137849931489,
+        0.9856810360265449
+      ],
+      "definition": "P(Q_P=1 | Arm 1 ALLOW)"
+    },
+    "SPAM_baseline_insitu_arm4": {
+      "value": 0.001220703125,
+      "ci95": [
+        0.001220703125,
+        0.0006632072387913751,
+        0.0022457801677002293
+      ],
+      "definition": "P(Q_P=1 | Arm 4 idle)"
+    },
+    "L_control": {
+      "value": 0.9898681640625,
+      "ci95": [
+        0.9898681640625,
+        0.9874582623548633,
+        0.991818838364116
+      ],
+      "definition": "P(Q_P=1 | Arm 3 ungated control)"
+    },
+    "Delta_B": {
+      "value": 0.97900390625,
+      "definition": "S_A - L_D"
+    },
+    "L_D_corrected": {
+      "value": 0.0020751953125,
+      "upper95": 0.004128039906599276,
+      "definition": "L_D - SPAM_baseline"
+    },
+    "I_L": {
+      "value": 0.9966703662597114,
+      "definition": "(L_control - L_D) / L_control"
+    },
+    "L_D_vs_SPAM_distinguishable_99": false
+  },
+  "secondary_arms": {
+    "arm5_stale_auth": {
+      "P_Q_P_1": 0.9813232421875,
+      "ci95": [
+        0.9813232421875,
+        0.978157961870534,
+        0.9840373055441023
+      ]
+    },
+    "arm6_replayed_auth": {
+      "P_Q_P_1": 0.0032958984375,
+      "ci95": [
+        0.0032958984375,
+        0.002266185492155687,
+        0.004791247145390651
+      ]
+    },
+    "arm7_superposition_auth": {
+      "P_Q_P_1": 0.5048828125,
+      "ci95": [
+        0.5048828125,
+        0.4940560050396965,
+        0.5157050425627852
+      ]
+    },
+    "arm8_payload_readout_ref": {
+      "P_Q_P_1": 0.989990234375,
+      "ci95": [
+        0.989990234375,
+        0.987593164772989,
+        0.9919279621360524
+      ]
+    }
+  },
+  "insitu_spam_job": {
+    "Q5": 0.0029296875,
+    "Q6": 0.00146484375,
+    "gate_passed": true
+  },
+  "decision_outcome": "PASS",
+  "status": "PASS",
+  "rationale": "L_D_corrected=0.0021 <= 0.02 AND Delta_B=0.9790 >= 0.7; in-situ SPAM within ceiling. Diagnostic: L_D ~ SPAM (both at readout floor) \u2014 expected for a clean boundary.",
+  "raw_vs_mitigated": "Primary endpoint = RAW counts, no readout mitigation applied.",
+  "preregistered_pass": {
+    "L_D_corrected_max": 0.02,
+    "Delta_B_min": 0.7,
+    "spam_ceiling": 0.02
+  },
+  "timestamp": "2026-07-16T07:39:27.028949+00:00",
+  "provenance": {
+    "preregistration_hash": {
+      "git_lock_commit": "fd1c7fad7c290ee04fc564575f9d7bc12000c3b7",
+      "prereg_file_sha256": "5956869b1194b0771445a35637423fceff38ebbd250de9132ea41d42f616a650",
+      "manifest_sha256": "d53894620758b7422a0d2224df17d8be5f91fe7a5d45e0a5a1f1f61f64d867ee"
+    },
+    "code_hash": "2ed5a715036eb688ebc52194664767951ee786c805aa6f054e8bd0d514e7e690",
+    "circuit_hash": "d54d11bcc573cd0159454127b7f1fa54a2e563e414c854f222d300649b149e8a",
+    "parameter_hash": "f537a90fce8134d5dfd216bfe285dbb2dd271e9a0b04cce98272ffb86594c044",
+    "calibration_hash": "7374d727235d48734ac4646b95fdcdf8b91387f6d49a608731f2350e0dfdb083"
+  },
+  "preregistration_hash": "fd1c7fad7c290ee04fc564575f9d7bc12000c3b7",
+  "code_hash": "2ed5a715036eb688ebc52194664767951ee786c805aa6f054e8bd0d514e7e690",
+  "circuit_hash": "d54d11bcc573cd0159454127b7f1fa54a2e563e414c854f222d300649b149e8a",
+  "parameter_hash": "f537a90fce8134d5dfd216bfe285dbb2dd271e9a0b04cce98272ffb86594c044",
+  "calibration_hash": "7374d727235d48734ac4646b95fdcdf8b91387f6d49a608731f2350e0dfdb083",
+  "independence": "Independent supplemental experiment. NOT part of UIP Phase 1/2. See INDEPENDENCE_NOTICE.md."
+}
