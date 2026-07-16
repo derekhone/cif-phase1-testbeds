@@ -1,0 +1,17 @@
+ARK-443 — Two-of-Three (M-of-N) Quorum Authorization
+Remnant Fieldworks Inc. — Derek Hone
+SHA-256 MANIFEST (preregistration LOCK)
+Protocol: Proof Before Power. Prediction Before Measurement. No Rescue After Failure.
+This MANIFEST is committed BEFORE any IBM Quantum job is submitted (Field 27).
+Quorum gate uses FOUR sequential single-register if_test blocks over majority values {3,5,6,7}
+(no nested conditionals; verified to transpile on ibm_marrakesh before locking).
+Generated (UTC): 2026-07-16T23:55:20.533591+00:00
+
+aaa880bf0d4dcb5e64b06e15d57b18ea951728a14850e6df0fb0b970ef164650  ARK_443_preregistration.md
+25f267982bd18a68578a4597258da6e15f3772036684e4229ee98273d303a388  README.md
+f629a3191b1a0feaee2ddb50acf05e1b86da38f62f148cd026352d1c9c957ed4  ark_443_select_qubits.py
+518a1eb627d36fdc099b03b2d2652d4cbbc19332c57825e878d79cf52f7e93dd  ark_443_circuits.py
+da1c34a67b98bb0915c7145bc878253a6c0e1a18db5da3d2117435ee3a6bfd24  ark_443_spam_job.py
+b52a01046901c640c52dfbc322065815f0771ef654a9ec64436cab53a61e4e5e  ark_443_submit_ibm.py
+5e7dc04a9e43ef2dbd552df728788e41b178e648780bdf55231c3d07c997d556  ark_443_retrieve.py
+88a4cdfbcce635bde0eeede8aad4ead748ebf5f1415a9ae04ca299a16fe7acde  ark_443_analysis.py
