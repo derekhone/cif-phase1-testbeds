@@ -1,0 +1,25 @@
+{
+  "experiment_id": "ARK-441",
+  "principal_job_id": "d9c8ij41osis73bjhldg",
+  "backend": "ibm_kingston",
+  "instance": "open-instance",
+  "initial_layout": [
+    5,
+    6
+  ],
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_allow",
+    "arm2_deny",
+    "arm3_ungated_control",
+    "arm4_idle_spam",
+    "arm5_stale_auth",
+    "arm6_replayed_auth",
+    "arm7_superposition_auth",
+    "arm8_payload_readout_ref"
+  ],
+  "optimization_level": 1,
+  "dynamical_decoupling": false,
+  "submitted_utc": "2026-07-16T07:33:30.701639+00:00",
+  "spam_job_id": "d9c7lf7ngvls73a941jg"
+}
