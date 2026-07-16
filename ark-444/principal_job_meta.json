@@ -1,6 +1,6 @@
 {
   "experiment_id": "ARK-444",
-  "principal_job_id": "d9cmdvsjeosc73fgfk5g",
+  "principal_job_id": "d9cmgi9htsac739bv2mg",
   "backend": "ibm_marrakesh",
   "instance": "open-instance",
   "initial_layout": [
@@ -30,6 +30,6 @@
   },
   "optimization_level": 1,
   "dynamical_decoupling": false,
-  "submitted_utc": "2026-07-16T23:19:25.786069+00:00",
+  "submitted_utc": "2026-07-16T23:24:55.687841+00:00",
   "spam_job_id": "d9cmadkinv1c73anvn90"
 }
