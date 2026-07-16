@@ -1,0 +1,7 @@
+# ARK-446 — Cross-Device Replication of the ARK-441 VBE Authorization Boundary
+
+**Remnant Fieldworks Inc. — Derek Hone**
+**Backend:** IBM Quantum `ibm_marrakesh` (Heron r2) · **Qubits:** selected at execution time (RE<2%, connected, min-sum) · **Instance:** open-instance
+**Governing principle:** *Proof Before Power. Prediction Before Measurement. No Rescue After Failure.*
+
+ARK-446 is a preregistered, second-device replication of ARK-441. It re-runs the identical 8-arm verify-then-execute authorization-boundary circuit design — same qubit-selection rule (readout error < 2%, directly connected, minimum sum of readout errors), same 8,192 shots/arm, and the same in-situ SPAM kill-gate protocol — on a second IBM Heron device (`ibm_marrakesh`) to test whether ARK-441's result (SPAM-corrected `L_D ≤ 2%`, `Δ_B ≥ 0.70`) is device-specific or reproducible. Only the backend and the rule-selected physical qubit pair change; everything else is held fixed. The SPAM job runs first and gates the principal job: if `SPAM_baseline > 2%` on either qubit the experiment is KILLED (INDETERMINATE) and stops immediately with no rescue. A PASS demonstrates cross-device replicability of the VBE boundary but does not generalize beyond this backend/calibration/qubit pair and makes no cryptographic claim. The full 28-field preregistration (`ARK_446_preregistration.md`) and all code are committed with SHA-256 hashes **before any IBM Quantum job is submitted**; the preregistration commit hash is the lock, recorded in `RUN_LOG.md`.
