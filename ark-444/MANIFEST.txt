@@ -1,0 +1,17 @@
+ARK-444 — Decision-to-Execution Integrity
+Remnant Fieldworks Inc. — Derek Hone
+SHA-256 MANIFEST (preregistration LOCK)
+Protocol: Proof Before Power. Prediction Before Measurement. No Rescue After Failure.
+This MANIFEST is committed BEFORE any hardware job is submitted (Field 27 ordering).
+Generated (UTC): 2026-07-16T23:10:34.673220+00:00
+
+6bd683896b5860faddde11357c79795eff3fa846a6cbf737451904145cca3e6a  ARK_444_preregistration.md
+67cb6c0b601423c3af22e084231d9339be068a4e467f7d8db1a075932ca575aa  README.md
+a262b953489d61914f21d492a27cdae4b8b2a04525c42a42856452e817a7ec59  RESULTS.md
+49cde418c360a0a4b8b7e724a8769b27eca2824028e59a0daf2338d9fa05a5df  ark_444_select_qubits.py
+0708f7ef1da048ded6b456261e298818229288dac6067ddf5ae11b61e76c045a  ark_444_circuits.py
+0b8b6d897de44da2d363e30071108d98682e1dc970b6a8fc73a8fb4f9faa636a  ark_444_spam_job.py
+6d88f1f212b6396442125fda7888551e701c9837a0150ec0cc78fe9ad92df68c  ark_444_submit_ibm.py
+5697fcd4a34990b9362b149e2422e8675934199d9abaee1bd38649409e8e91ab  ark_444_retrieve.py
+1c8f3d1d2ea74d56e29e51e77775a28caa47361331f7241b000e4f83dad2f3db  ark_444_analysis.py
+
