@@ -1,0 +1,12 @@
+qiskit_runtime_service._discover_account:WARNING:2026-07-16 23:58:04,831: Loading account with the given token. A saved account will not be used.
+[SUBMIT] SPAM gate check:
+   Q_P: SPAM_baseline=0.0015 <= 0.02 ? True
+   Q_A1: SPAM_baseline=0.0005 <= 0.02 ? True
+   Q_A2: SPAM_baseline=0.0000 <= 0.02 ? True
+   Q_A3: SPAM_baseline=0.0005 <= 0.02 ? True
+[SUBMIT] SPAM gate PASSED. Proceeding to principal job submission.
+[SUBMIT] transpiled depths: {'arm1_0of3_deny': 6, 'arm2_1of3_deny': 7, 'arm3_2of3_allow': 7, 'arm4_3of3_allow': 7, 'arm5_1of3_altchannel_deny': 7, 'arm6_degraded_quorum_allow': 9, 'arm7_replay_tamper_deny': 6, 'arm8_idle_spam': 1}
+[SUBMIT] submitting 8 arms x 8192 shots to ibm_marrakesh ...
+[SUBMIT] PRINCIPAL JOB ID = d9cn04kjeosc73fgg8cg
+[SUBMIT] wrote /home/ubuntu/github_repos/uip-phase1-testbeds/ark-443/RUN_LOG.md
+[SUBMIT] job submitted and recorded. Use ark_443_retrieve.py to fetch results.

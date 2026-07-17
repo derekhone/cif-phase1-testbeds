@@ -1,0 +1,233 @@
+{
+  "experiment_id": "ARK-443",
+  "title": "Two-of-Three (M-of-N) Quorum Authorization",
+  "central_question": "Does the payload execute ONLY when at least two of three independent authorizers approve, and can no single channel (honest, replayed, or compromised) cause execution, while a two-authorizer quorum tolerates a degraded third?",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "qubits": {
+    "Q_P": 14,
+    "Q_A1": 34,
+    "Q_A2": 54,
+    "Q_A3": 140
+  },
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_0of3_deny",
+    "arm2_1of3_deny",
+    "arm3_2of3_allow",
+    "arm4_3of3_allow",
+    "arm5_1of3_altchannel_deny",
+    "arm6_degraded_quorum_allow",
+    "arm7_replay_tamper_deny",
+    "arm8_idle_spam"
+  ],
+  "arm_class": {
+    "arm1_0of3_deny": "deny_0of3",
+    "arm2_1of3_deny": "deny_1of3",
+    "arm3_2of3_allow": "allow_2of3",
+    "arm4_3of3_allow": "allow_3of3",
+    "arm5_1of3_altchannel_deny": "deny_1of3_alt",
+    "arm6_degraded_quorum_allow": "allow_degraded",
+    "arm7_replay_tamper_deny": "deny_replay",
+    "arm8_idle_spam": "idle_spam"
+  },
+  "arm_expect": {
+    "arm1_0of3_deny": "DENY",
+    "arm2_1of3_deny": "DENY",
+    "arm3_2of3_allow": "ALLOW",
+    "arm4_3of3_allow": "ALLOW",
+    "arm5_1of3_altchannel_deny": "DENY",
+    "arm6_degraded_quorum_allow": "ALLOW",
+    "arm7_replay_tamper_deny": "DENY",
+    "arm8_idle_spam": "SPAM"
+  },
+  "job_ids": {
+    "spam_job": "d9cmvdkinv1c73ao0g00",
+    "principal_job": "d9cn04kjeosc73fgg8cg"
+  },
+  "raw_results_hash": "b197fd0c474fa1f305f6b9a52b927f1f4e4a99fb00a9bfb7c05a73d2e27c5dbe",
+  "spam_results_hash": "9578c943ecd87d55cd601aade2b2aaf68591ae348ec189e0698930fc8af01969",
+  "metrics": {
+    "L_0of3": {
+      "value": 0.0020751953125,
+      "ci95": [
+        0.0020751953125,
+        0.0012960887735761618,
+        0.003321081963349745
+      ],
+      "ci99": [
+        0.0020751953125,
+        0.0011222748291091472,
+        0.0038341322013084956
+      ],
+      "definition": "P(Q_P=1 | Arm 1 000 no approvals) PRIMARY"
+    },
+    "L_1of3": {
+      "value": 0.001953125,
+      "ci95": [
+        0.001953125,
+        0.0012026062744147595,
+        0.0031705382724491037
+      ],
+      "ci99": [
+        0.001953125,
+        0.0010370582046460393,
+        0.0036754058022438803
+      ],
+      "definition": "P(Q_P=1 | Arm 2 100 one channel alone) PRIMARY"
+    },
+    "S_2of3": {
+      "value": 0.972412109375,
+      "ci95": [
+        0.972412109375,
+        0.9686377301418987,
+        0.9757436253982084
+      ],
+      "ci95_lower": 0.9686377301418987,
+      "definition": "P(Q_P=1 | Arm 3 110 quorum) PRIMARY"
+    },
+    "S_3of3": {
+      "value": 0.9862060546875,
+      "ci95": [
+        0.9862060546875,
+        0.9834427432732445,
+        0.9885135717438734
+      ],
+      "ci95_lower": 0.9834427432732445,
+      "definition": "P(Q_P=1 | Arm 4 111 unanimous)"
+    },
+    "L_1of3_alt": {
+      "value": 0.00390625,
+      "ci95": [
+        0.00390625,
+        0.00276842495759897,
+        0.005509138630257585
+      ],
+      "ci99": [
+        0.00390625,
+        0.002488299138497856,
+        0.0061272532448356344
+      ],
+      "definition": "P(Q_P=1 | Arm 5 001 alt single channel) PRIMARY"
+    },
+    "S_degraded": {
+      "value": 0.978515625,
+      "ci95": [
+        0.978515625,
+        0.9751442341593841,
+        0.9814384308838251
+      ],
+      "ci95_lower": 0.9751442341593841,
+      "definition": "P(Q_P=1 | Arm 6 two honest + degraded third) tolerance"
+    },
+    "L_replay": {
+      "value": 0.0008544921875,
+      "ci95": [
+        0.0008544921875,
+        0.0004139780545496139,
+        0.001762930781755861
+      ],
+      "ci99": [
+        0.0008544921875,
+        0.00033424431751324576,
+        0.002182732477627166
+      ],
+      "definition": "P(Q_P=1 | Arm 7 post-vote replay/tamper) PRIMARY"
+    },
+    "SPAM_baseline_arm8": {
+      "value": 0.0020751953125,
+      "ci95": [
+        0.0020751953125,
+        0.0012960887735761618,
+        0.003321081963349745
+      ],
+      "definition": "P(Q_P=1 | Arm 8 idle)"
+    },
+    "L_worst": {
+      "value": 0.00390625,
+      "definition": "max of the four raw DENY leakages"
+    },
+    "S_min": {
+      "value": 0.972412109375,
+      "definition": "min of the three ALLOW success rates"
+    },
+    "Delta_B": {
+      "value": 0.968505859375,
+      "definition": "S_min - L_worst"
+    },
+    "L_0of3_corrected": {
+      "value": 0.0,
+      "upper95": 0.0020249931897735832,
+      "definition": "L_0of3 - SPAM_baseline"
+    },
+    "L_1of3_corrected": {
+      "value": -0.0001220703125,
+      "upper95": 0.001874449498872942,
+      "definition": "L_1of3 - SPAM_baseline"
+    },
+    "L_1of3_alt_corrected": {
+      "value": 0.0018310546875,
+      "upper95": 0.004213049856681424,
+      "definition": "L_1of3_alt - SPAM_baseline"
+    },
+    "L_replay_corrected": {
+      "value": -0.001220703125,
+      "upper95": 0.0004668420081796992,
+      "definition": "L_replay - SPAM_baseline"
+    }
+  },
+  "secondary_hypotheses": {
+    "H2a_denies_fail_closed_at_floor": {
+      "deny_raw": {
+        "L_0of3": 0.0020751953125,
+        "L_1of3": 0.001953125,
+        "L_1of3_alt": 0.00390625,
+        "L_replay": 0.0008544921875
+      },
+      "each_overlaps_spam_99CI": {
+        "L_0of3": true,
+        "L_1of3": true,
+        "L_1of3_alt": true,
+        "L_replay": true
+      },
+      "all_at_floor": true,
+      "note": "Every DENY arm withholds the payload down to the SPAM floor (no residual execution). Descriptive; no pass/fail weight."
+    },
+    "H2b_degraded_quorum_tolerance": {
+      "S_2of3": 0.972412109375,
+      "S_degraded": 0.978515625,
+      "overlap_95CI": true,
+      "note": "A quorum of two honest channels executes within the clean-2of3 95% CI even when the third channel is degraded (superposed)."
+    },
+    "H2c_replay_indistinguishable_from_baseline": {
+      "L_replay": 0.0008544921875,
+      "L_0of3": 0.0020751953125,
+      "overlap_99CI": true,
+      "note": "A post-vote replayed/tampered single channel is no more able to execute than the 0-of-3 baseline."
+    }
+  },
+  "insitu_spam_job": {
+    "baselines": {
+      "Q_P": 0.00146484375,
+      "Q_A1": 0.00048828125,
+      "Q_A2": 0.0,
+      "Q_A3": 0.00048828125
+    },
+    "gate_passed": true,
+    "drift_vs_arm8": 0.0006103515625,
+    "drift_ok": true
+  },
+  "decision_outcome": "PASS",
+  "status": "PASS",
+  "rationale": "All four corrected DENY leakages <= 0.02 (L_0of3=0.0000, L_1of3=-0.0001, L_1of3_alt=0.0018, L_replay=-0.0012) AND all three ALLOW arms >= 0.9 (S_2of3=0.9724, S_3of3=0.9862, S_degraded=0.9785) AND Delta_B=0.9685 >= 0.7; in-situ SPAM within ceiling. No single channel (0-of-3, 1-of-3, alt-channel, or post-vote replay) crosses the boundary; a 2-of-3 quorum executes, unanimity executes, and a quorum of two honest channels tolerates a degraded third.",
+  "raw_vs_mitigated": "Primary endpoint = RAW counts, no readout mitigation applied.",
+  "preregistered_pass": {
+    "deny_leak_corrected_max": 0.02,
+    "allow_min": 0.9,
+    "Delta_B_min": 0.7,
+    "spam_ceiling": 0.02,
+    "drift_ceiling": 0.005
+  },
+  "interpretation": "Metrological characterization of a 2-of-3 quorum-gated execution rule on this hardware: whether the payload fires iff at least two of three measured authorization bits are 1, no single channel (including a post-vote replay/tamper) can unilaterally execute, and a quorum of two honest channels tolerates a degraded third. NOT new physics, NOT a cryptographic guarantee. The committed bits are a hardware abstraction of independent approvals. A 2-of-3 quorum protects against ONE compromised channel; two colluding channels form a legitimate quorum (intended design limit). Findings apply only to this implementation on these qubits on this backend at this calibration.",
+  "timestamp": "2026-07-16T23:59:51.242760+00:00"
+}

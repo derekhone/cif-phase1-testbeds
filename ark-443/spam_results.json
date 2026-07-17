@@ -1,0 +1,146 @@
+{
+  "experiment_id": "ARK-443",
+  "job_type": "in_situ_spam",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "physical_qubits": {
+    "Q_P": 14,
+    "Q_A1": 34,
+    "Q_A2": 54,
+    "Q_A3": 140
+  },
+  "shots_per_circuit": 2048,
+  "spam_ceiling": 0.02,
+  "spam_job_id": "d9cmvdkinv1c73ao0g00",
+  "submitted_utc": "2026-07-16T23:56:36.540227+00:00",
+  "completed_utc": "2026-07-16T23:56:55.978529+00:00",
+  "per_circuit": [
+    {
+      "qubit": "Q_P",
+      "physical": 14,
+      "prepared": "0",
+      "counts": {
+        "0": 2045,
+        "1": 3
+      },
+      "total": 2048,
+      "P_read_1": 0.00146484375,
+      "P_read_0": 0.99853515625
+    },
+    {
+      "qubit": "Q_P",
+      "physical": 14,
+      "prepared": "1",
+      "counts": {
+        "1": 2032,
+        "0": 16
+      },
+      "total": 2048,
+      "P_read_1": 0.9921875,
+      "P_read_0": 0.0078125
+    },
+    {
+      "qubit": "Q_A1",
+      "physical": 34,
+      "prepared": "0",
+      "counts": {
+        "0": 2047,
+        "1": 1
+      },
+      "total": 2048,
+      "P_read_1": 0.00048828125,
+      "P_read_0": 0.99951171875
+    },
+    {
+      "qubit": "Q_A1",
+      "physical": 34,
+      "prepared": "1",
+      "counts": {
+        "1": 2028,
+        "0": 20
+      },
+      "total": 2048,
+      "P_read_1": 0.990234375,
+      "P_read_0": 0.009765625
+    },
+    {
+      "qubit": "Q_A2",
+      "physical": 54,
+      "prepared": "0",
+      "counts": {
+        "0": 2048
+      },
+      "total": 2048,
+      "P_read_1": 0.0,
+      "P_read_0": 1.0
+    },
+    {
+      "qubit": "Q_A2",
+      "physical": 54,
+      "prepared": "1",
+      "counts": {
+        "1": 2042,
+        "0": 6
+      },
+      "total": 2048,
+      "P_read_1": 0.9970703125,
+      "P_read_0": 0.0029296875
+    },
+    {
+      "qubit": "Q_A3",
+      "physical": 140,
+      "prepared": "0",
+      "counts": {
+        "0": 2047,
+        "1": 1
+      },
+      "total": 2048,
+      "P_read_1": 0.00048828125,
+      "P_read_0": 0.99951171875
+    },
+    {
+      "qubit": "Q_A3",
+      "physical": 140,
+      "prepared": "1",
+      "counts": {
+        "1": 2025,
+        "0": 23
+      },
+      "total": 2048,
+      "P_read_1": 0.98876953125,
+      "P_read_0": 0.01123046875
+    }
+  ],
+  "qubit_metrics": {
+    "Q_P": {
+      "physical": 14,
+      "p01_false_one_when_zero": 0.00146484375,
+      "p10_false_zero_when_one": 0.0078125,
+      "spam_baseline": 0.00146484375,
+      "passes_ceiling": true
+    },
+    "Q_A1": {
+      "physical": 34,
+      "p01_false_one_when_zero": 0.00048828125,
+      "p10_false_zero_when_one": 0.009765625,
+      "spam_baseline": 0.00048828125,
+      "passes_ceiling": true
+    },
+    "Q_A2": {
+      "physical": 54,
+      "p01_false_one_when_zero": 0.0,
+      "p10_false_zero_when_one": 0.0029296875,
+      "spam_baseline": 0.0,
+      "passes_ceiling": true
+    },
+    "Q_A3": {
+      "physical": 140,
+      "p01_false_one_when_zero": 0.00048828125,
+      "p10_false_zero_when_one": 0.01123046875,
+      "spam_baseline": 0.00048828125,
+      "passes_ceiling": true
+    }
+  },
+  "spam_gate_passed": true,
+  "kill_condition": "SPAM_baseline (p01) > 0.02 on ANY of the four qubits => INDETERMINATE/KILLED"
+}

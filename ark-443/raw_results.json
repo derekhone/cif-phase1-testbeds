@@ -1,0 +1,160 @@
+{
+  "experiment_id": "ARK-443",
+  "principal_job_id": "d9cn04kjeosc73fgg8cg",
+  "backend": "ibm_marrakesh",
+  "instance": "open-instance",
+  "initial_layout": [
+    14,
+    34,
+    54,
+    140
+  ],
+  "shots_per_arm": 8192,
+  "arm_order": [
+    "arm1_0of3_deny",
+    "arm2_1of3_deny",
+    "arm3_2of3_allow",
+    "arm4_3of3_allow",
+    "arm5_1of3_altchannel_deny",
+    "arm6_degraded_quorum_allow",
+    "arm7_replay_tamper_deny",
+    "arm8_idle_spam"
+  ],
+  "arm_class": {
+    "arm1_0of3_deny": "deny_0of3",
+    "arm2_1of3_deny": "deny_1of3",
+    "arm3_2of3_allow": "allow_2of3",
+    "arm4_3of3_allow": "allow_3of3",
+    "arm5_1of3_altchannel_deny": "deny_1of3_alt",
+    "arm6_degraded_quorum_allow": "allow_degraded",
+    "arm7_replay_tamper_deny": "deny_replay",
+    "arm8_idle_spam": "idle_spam"
+  },
+  "arm_expect": {
+    "arm1_0of3_deny": "DENY",
+    "arm2_1of3_deny": "DENY",
+    "arm3_2of3_allow": "ALLOW",
+    "arm4_3of3_allow": "ALLOW",
+    "arm5_1of3_altchannel_deny": "DENY",
+    "arm6_degraded_quorum_allow": "ALLOW",
+    "arm7_replay_tamper_deny": "DENY",
+    "arm8_idle_spam": "SPAM"
+  },
+  "spam_job_id": "d9cmvdkinv1c73ao0g00",
+  "retrieved_utc": "2026-07-16T23:59:43.426681+00:00",
+  "final_status": "DONE",
+  "arms": {
+    "arm1_0of3_deny": {
+      "counts": {
+        "0": 8175,
+        "1": 17
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0020751953125,
+      "ca_counts": {
+        "000": 8179,
+        "100": 5,
+        "001": 6,
+        "010": 2
+      }
+    },
+    "arm2_1of3_deny": {
+      "counts": {
+        "0": 8176,
+        "1": 16
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.001953125,
+      "ca_counts": {
+        "001": 8116,
+        "000": 71,
+        "101": 3,
+        "011": 2
+      }
+    },
+    "arm3_2of3_allow": {
+      "counts": {
+        "1": 7966,
+        "0": 226
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.972412109375,
+      "ca_counts": {
+        "011": 8068,
+        "111": 6,
+        "001": 31,
+        "010": 87
+      }
+    },
+    "arm4_3of3_allow": {
+      "counts": {
+        "1": 8079,
+        "0": 113
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.9862060546875,
+      "ca_counts": {
+        "111": 7970,
+        "011": 96,
+        "110": 84,
+        "101": 36,
+        "001": 3,
+        "010": 3
+      }
+    },
+    "arm5_1of3_altchannel_deny": {
+      "counts": {
+        "0": 8160,
+        "1": 32
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.00390625,
+      "ca_counts": {
+        "100": 8091,
+        "110": 3,
+        "000": 88,
+        "101": 10
+      }
+    },
+    "arm6_degraded_quorum_allow": {
+      "counts": {
+        "1": 8016,
+        "0": 176
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.978515625,
+      "ca_counts": {
+        "111": 3954,
+        "001": 26,
+        "011": 4094,
+        "010": 49,
+        "110": 53,
+        "101": 16
+      }
+    },
+    "arm7_replay_tamper_deny": {
+      "counts": {
+        "0": 8185,
+        "1": 7
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0008544921875,
+      "ca_counts": {
+        "000": 8173,
+        "010": 2,
+        "100": 8,
+        "001": 9
+      }
+    },
+    "arm8_idle_spam": {
+      "counts": {
+        "0": 8175,
+        "1": 17
+      },
+      "total": 8192,
+      "P_Q_P_1": 0.0020751953125,
+      "ca_counts": null
+    }
+  },
+  "primary_endpoint": "raw counts, no readout mitigation"
+}

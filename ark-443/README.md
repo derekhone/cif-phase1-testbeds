@@ -1,0 +1,16 @@
+# ARK-443 — Two-of-Three (M-of-N) Quorum Authorization
+
+**Remnant Fieldworks Inc. — Derek Hone**
+**Backend:** IBM Quantum `ibm_marrakesh` (Heron r2) · **Governing principle:** *Proof Before Power. Prediction Before Measurement. No Rescue After Failure.*
+
+ARK-443 is a preregistered test of **separation of duties** through an **M-of-N (here 2-of-3) quorum**: the payload fires **iff at least two of three independent authorization channels approve**, and **no single channel — honest, replayed, or compromised — can unilaterally cross the boundary**, while a legitimate two-authorizer quorum is **tolerant of a degraded third channel**. Three authorizer qubits are prepared per arm, measured into a 3-bit authorization register `ca`, and a **classical majority (≥ 2 of 3)** conditions an X on the payload qubit `Q_P`; the payload readout `cp` is the primary endpoint. There are **no inter-qubit two-qubit gates** — the quorum is realized purely by **classical feedforward**. It is **not** new physics and **not** a cryptographic guarantee: an "authorizer" is a single prepared+measured qubit and the "quorum" is a classical majority of measured bits realized in a dynamic circuit; results apply only to these qubits, this backend, and this calibration.
+
+**Eight arms:** 0-of-3 (no approvals, DENY baseline); 1-of-3 (one channel alone, DENY — no unilateral); 2-of-3 (quorum, ALLOW); 3-of-3 (unanimous, ALLOW); 1-of-3 alternate channel (DENY, channel-agnostic); degraded quorum (two honest + noisy third, ALLOW — tolerance); post-vote replay/tamper on one channel (DENY); and an idle SPAM baseline. The quorum gate is realized as **four sequential single-register `if_test` blocks** over the majority values `{3,5,6,7}` (popcount ≥ 2), which are mutually exclusive, so at most one fires per shot — this avoids the nested-conditional pattern that IBM Runtime does not support (error 1524, learned in ARK-444). Because majority is symmetric, the predicate is invariant to `ca` bit ordering.
+
+**Locked thresholds:** every DENY arm must satisfy `L_corrected ≤ 0.02`; every ALLOW arm must satisfy `S ≥ 0.90`; quorum discrimination `Δ_B = S_min − L_worst` must satisfy `Δ_B ≥ 0.70`; in-situ `SPAM_baseline ≤ 0.02` on **all four** qubits (else KILL/INDETERMINATE).
+
+**Honest boundary note:** a 2-of-3 quorum protects against **one** compromised or replayed channel. **Two colluding channels form a legitimate quorum** and would execute — this is the intended design limit of M-of-N separation of duties, not a defect.
+
+**Preregistration integrity:** the full preregistration (`ARK_443_preregistration.md`) and all code are committed with SHA-256 hashes (`MANIFEST.txt`) **before any job submission**; the preregistration commit hash is the lock, recorded in `RUN_LOG.md`. Execution order: freeze qubits → in-situ SPAM gate → submit principal job (record job ID before reading) → retrieve raw counts → analysis → tag `ark-443-v1.0`.
+
+Extends ARK-441 (authorization boundary), ARK-446 (cross-device replication), ARK-442 (delay / expiry / replay / reverification), and ARK-444 (decision-to-execution integrity) from *whether one authorization is valid* to *whether a quorum of independent authorizers is required and separation of duties holds*.
