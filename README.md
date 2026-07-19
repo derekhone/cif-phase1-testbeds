@@ -1,6 +1,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21362399.svg)](https://doi.org/10.5281/zenodo.21362399)
 
-# UIP Phase 1 Testbeds — PHASE 1 CLOSED
+# Coherent Inheritance Framework — Phase 1 Testbeds
+
+> **Naming note.** This work was originally published under the working title Unified Inheritance Physics. The active framework name is now Coherent Inheritance Framework (CIF). Historical files and DOI records retain their original titles where necessary for provenance.
 
 **Status: PHASE 1 CLOSED (July 12, 2026).** Candidate framework — not claimed as new physics. All results are consistent with standard quantum mechanics, quantum information theory, and feedback control. Final ledger: **4 confirmed / 5 falsified**, including two preregistered hardware rejections on IBM Quantum, both published unedited the same day. The "Unified" designation was retired by the Appendix G result. This repository exists so reviewers can reproduce, vary, and attempt to break every reported result.
 
