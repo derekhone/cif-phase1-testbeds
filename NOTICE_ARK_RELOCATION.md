@@ -2,9 +2,11 @@
 
 **Date:** 2026-07-17 (UTC)
 
-## For reviewers of the UIP Phase 1 program
+> **Naming note.** This work was originally published under the working title Unified Inheritance Physics (UIP). The active framework name is now the Coherent Inheritance Framework (CIF), and this repository is now `cif-phase1-testbeds`. Historical files, commit tags, and DOI records retain their original titles where necessary for provenance; GitHub automatically redirects the former `uip-phase1-testbeds` URLs.
 
-This repository (`uip-phase1-testbeds`) is the record of the **UIP Phase 1 physics falsification
+## For reviewers of the Coherent Inheritance Framework (CIF) Phase 1 program (formerly UIP)
+
+This repository (`cif-phase1-testbeds`) is the record of the **CIF Phase 1 physics falsification
 program** — the A–B packet plus tests C, D–E, F, G, H, I (final ledger: 4 confirmed / 5 falsified).
 That program is **closed**; its canonical archive is **DOI 10.5281/zenodo.21246246**. Nothing further
 will be added to the Phase 1 physics record.
@@ -41,6 +43,6 @@ read or cited as a Phase 1 falsification-program result.
 
 | Track | Home | DOI | Status |
 |-------|------|-----|--------|
-| UIP Phase 1 (physics falsification) | this repo (`uip-phase1-testbeds`) | 10.5281/zenodo.21246246 | Closed; under review |
+| CIF Phase 1 (physics falsification, formerly UIP) | this repo (`cif-phase1-testbeds`) | 10.5281/zenodo.21246246 | Closed; under review |
 | ExecutionProof / ARK authorization | `executionproof-testbeds` | 10.5281/zenodo.21398676 | Ongoing |
 | ARK-DM-1 (dark-matter physics test) | this repo, `ark-dm-1/` (separate) | — | Complete (FAIL); separate |
