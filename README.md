@@ -1,3 +1,9 @@
+> **Repository Role:** Completed Research Program — CIF Phase 1 Falsification Program (Closed) · Part of the [Remnant Fieldworks](https://remnantfieldworks.com) research and product ecosystem
+
+**Where this fits:** This repository is part of the Coherent Inheritance Framework (CIF) open-science program at Remnant Fieldworks. CIF investigates coherence dynamics across inheritance boundaries using preregistered, evidence-constrained methodology. This repository holds the closed Phase 1 falsification program, including the Appendix G result that retired the earlier "Unified" designation. For the commercial product, see [ExecutionProof](https://executionproof.io).
+
+---
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21362399.svg)](https://doi.org/10.5281/zenodo.21362399)
 
 # Coherent Inheritance Framework — Phase 1 Testbeds
