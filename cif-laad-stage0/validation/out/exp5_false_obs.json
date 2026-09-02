@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "experiment": "EXP-5 false-observation resilience",
+    "numpy": "2.2.6",
+    "python": "3.11.6",
+    "note": "simulation-only; frozen validate()+replay+contradiction defences",
+    "wallclock_s": 1.96
+  },
+  "part_a_typed_rejects": {
+    "malformed_nan_pos": {
+      "expected": "E_POS",
+      "got": [
+        "E_POS"
+      ],
+      "rejected_as_expected": true
+    },
+    "malformed_cov_not_pd": {
+      "expected": "E_COV_PD",
+      "got": [
+        "E_COV_PD"
+      ],
+      "rejected_as_expected": true
+    },
+    "stale_ts": {
+      "expected": "E_TS_STALE",
+      "got": [
+        "E_TS_STALE"
+      ],
+      "rejected_as_expected": true
+    },
+    "future_ts": {
+      "expected": "E_TS_FUTURE",
+      "got": [
+        "E_TS_FUTURE"
+      ],
+      "rejected_as_expected": true
+    },
+    "bad_class_conf": {
+      "expected": "E_CLASS_CONF",
+      "got": [
+        "E_CLASS_CONF"
+      ],
+      "rejected_as_expected": true
+    },
+    "rfid_on_non_rf": {
+      "expected": "E_RFID",
+      "got": [
+        "E_RFID"
+      ],
+      "rejected_as_expected": true
+    },
+    "unknown_sensor_type": {
+      "expected": "E_SENSOR_TYPE",
+      "got": [
+        "E_SENSOR_TYPE"
+      ],
+      "rejected_as_expected": true
+    },
+    "replay_seq": {
+      "expected": "E_REPLAY",
+      "got": [
+        "E_REPLAY"
+      ],
+      "rejected_as_expected": true
+    }
+  },
+  "part_a_all_correct": true,
+  "part_b_spoof_resilience": {
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114
+    ],
+    "control": {
+      "continuity": 0.9876543209876547,
+      "rmse": 6.261244257670768,
+      "false_track_frames": 14.666666666666666,
+      "confirmed_tracks": 1.4
+    },
+    "spoofed": {
+      "continuity": 0.9876543209876547,
+      "rmse": 9.698999394638248,
+      "false_track_frames": 78.26666666666667,
+      "confirmed_tracks": 1.0666666666666667,
+      "rejected_obs": 64.4
+    }
+  }
+}
