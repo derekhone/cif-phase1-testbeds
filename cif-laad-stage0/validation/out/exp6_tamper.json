@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "experiment": "EXP-6 evidence tamper challenge",
+    "numpy": "2.2.6",
+    "python": "3.11.6",
+    "label": "tamper-EVIDENT, not tamper-proof",
+    "wallclock_s": 0.03
+  },
+  "results": {
+    "chain_length": 83,
+    "pristine_verify": true,
+    "tampers": {
+      "mutate_payload": {
+        "verify_after": false,
+        "detected": true
+      },
+      "reorder_records": {
+        "verify_after": false,
+        "detected": true
+      },
+      "delete_record": {
+        "verify_after": false,
+        "detected": true
+      },
+      "substitute_record": {
+        "verify_after": false,
+        "detected": true
+      }
+    },
+    "all_tampers_detected": true,
+    "engine_verify_all": true
+  }
+}

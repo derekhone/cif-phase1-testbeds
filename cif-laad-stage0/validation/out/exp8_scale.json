@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "experiment": "EXP-8 scale test",
+    "seeds": [
+      100,
+      101,
+      102
+    ],
+    "n_targets": [
+      1,
+      10,
+      50,
+      100,
+      500,
+      1000
+    ],
+    "numpy": "2.2.6",
+    "python": "3.11.6",
+    "realtime_budget_ms": 50.0,
+    "note": "simulation-only; pure-Python single-thread; CIF engine only",
+    "wallclock_s": 64.49
+  },
+  "results": {
+    "N=1": {
+      "mean_cycle_ms": 3.6442428568585057,
+      "max_seed_mean_cycle_ms": 4.147663097163396,
+      "peak_mem_mb": 0.062469000000000004,
+      "meets_realtime_50ms": true
+    },
+    "N=10": {
+      "mean_cycle_ms": 14.39085503530112,
+      "max_seed_mean_cycle_ms": 15.29331881708155,
+      "peak_mem_mb": 0.19364099999999998,
+      "meets_realtime_50ms": true
+    },
+    "N=50": {
+      "mean_cycle_ms": 44.12439114336545,
+      "max_seed_mean_cycle_ms": 49.44030614569783,
+      "peak_mem_mb": 0.47247,
+      "meets_realtime_50ms": true
+    },
+    "N=100": {
+      "mean_cycle_ms": 71.88537003128745,
+      "max_seed_mean_cycle_ms": 76.15022632914285,
+      "peak_mem_mb": 0.7263509999999999,
+      "meets_realtime_50ms": false
+    },
+    "N=500": {
+      "mean_cycle_ms": 236.8954060800625,
+      "max_seed_mean_cycle_ms": 247.3073314287744,
+      "peak_mem_mb": 2.5732776666666664,
+      "meets_realtime_50ms": false
+    },
+    "N=1000": {
+      "mean_cycle_ms": 435.38501862037396,
+      "max_seed_mean_cycle_ms": 450.79708328592545,
+      "peak_mem_mb": 4.812453666666666,
+      "meets_realtime_50ms": false
+    }
+  }
+}
