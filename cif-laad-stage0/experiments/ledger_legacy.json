@@ -1,0 +1,574 @@
+{
+  "meta": {
+    "generated_by": "experiments/run_experiments.py",
+    "seeds_per_scenario": 25,
+    "wallclock_s": 112.07,
+    "numpy": "2.2.6",
+    "python": "3.11.6",
+    "note": "All values simulation-only. No hardware, no real sensor data.",
+    "inherit_mode": "legacy",
+    "coherence_gated_inherit": false,
+    "inherit_gate_p": 0.95,
+    "inherit_min_support": 2
+  },
+  "results": {
+    "clean_single": {
+      "seeds": 25,
+      "cif": {
+        "position_rmse_m": {
+          "mean": 6.283128738468296,
+          "std": 0.6173965946665714,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 3.76,
+          "std": 5.248085365159374,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9876543209876543,
+          "std": 0.0,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 14.64,
+          "std": 18.026380668342718,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.5879971041701517,
+          "std": 0.30063424236862846,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.977,
+          "std": 0.02415574465836234,
+          "n": 25
+        },
+        "mean_latency_ms": {
+          "mean": 0.27654206035313783,
+          "std": 0.019417756543749075,
+          "n": 25
+        }
+      },
+      "baseline": {
+        "position_rmse_m": {
+          "mean": 6.283030522514806,
+          "std": 0.6171614613510863,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 3.76,
+          "std": 5.248085365159374,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9871604938271604,
+          "std": 0.002419249128674733,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 14.64,
+          "std": 18.026380668342718,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.5874722080200465,
+          "std": 0.2997317124275639,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9769936708860759,
+          "std": 0.024153013269403657,
+          "n": 25
+        }
+      },
+      "evidence_all_ok": true
+    },
+    "crossing_two": {
+      "seeds": 25,
+      "cif": {
+        "position_rmse_m": {
+          "mean": 7.9557030742948625,
+          "std": 0.7021616489130277,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 3.24,
+          "std": 4.072149309639812,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9834567901234568,
+          "std": 0.005716462668044538,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 15.64,
+          "std": 17.097087471262466,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.649213103010797,
+          "std": 0.26803370800140386,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9726244174581886,
+          "std": 0.01743985875271561,
+          "n": 25
+        },
+        "mean_latency_ms": {
+          "mean": 0.538415854630049,
+          "std": 0.03831612309120009,
+          "n": 25
+        }
+      },
+      "baseline": {
+        "position_rmse_m": {
+          "mean": 6.137803754950368,
+          "std": 0.4774019555389931,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 3.76,
+          "std": 4.465691435824916,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9874074074074074,
+          "std": 0.0012096245643373556,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 17.88,
+          "std": 19.71866121216144,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.569548055561349,
+          "std": 0.25008605360535247,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9729921383647798,
+          "std": 0.01950495596577371,
+          "n": 25
+        }
+      },
+      "evidence_all_ok": true
+    },
+    "sensor_dropout": {
+      "seeds": 25,
+      "cif": {
+        "position_rmse_m": {
+          "mean": 8.785286274431153,
+          "std": 0.8932196133864934,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 2.96,
+          "std": 4.5649096376598735,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9876543209876543,
+          "std": 0.0,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": 1.0,
+          "std": 0.0,
+          "n": 25
+        },
+        "false_track_frames": {
+          "mean": 10.92,
+          "std": 15.823830130534137,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.465726651426093,
+          "std": 0.2427931641339283,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.982,
+          "std": 0.016613247725836156,
+          "n": 25
+        },
+        "mean_latency_ms": {
+          "mean": 0.2596069583209393,
+          "std": 0.0493971845848889,
+          "n": 25
+        }
+      },
+      "baseline": {
+        "position_rmse_m": {
+          "mean": 6.914876728921686,
+          "std": 0.6149291357026667,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 4.04,
+          "std": 4.377030957167198,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.8879012345679012,
+          "std": 0.0033492987570988824,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": 0.3,
+          "std": 0.0,
+          "n": 25
+        },
+        "false_track_frames": {
+          "mean": 11.48,
+          "std": 14.585252826056873,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": 4.02,
+          "std": 0.09797958971132713,
+          "n": 25
+        },
+        "nees_mean": {
+          "mean": 2.5500835403357387,
+          "std": 0.24981893545871126,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.980547730829421,
+          "std": 0.016664102310308234,
+          "n": 25
+        }
+      },
+      "evidence_all_ok": true
+    },
+    "heavy_clutter": {
+      "seeds": 25,
+      "cif": {
+        "position_rmse_m": {
+          "mean": 25.546578065216575,
+          "std": 4.218309005773979,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 3.0,
+          "std": 1.876166303929372,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.7750617283950617,
+          "std": 0.07450655640352546,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 102.72,
+          "std": 55.61044506205646,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": 1.8179285714285713,
+          "std": 0.7214986321124148,
+          "n": 25
+        },
+        "nees_mean": {
+          "mean": 2.5945269757910285,
+          "std": 0.41846401748975587,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.96061577245972,
+          "std": 0.020845086094641363,
+          "n": 25
+        },
+        "mean_latency_ms": {
+          "mean": 5.149205772229183,
+          "std": 0.41265214521983734,
+          "n": 25
+        }
+      },
+      "baseline": {
+        "position_rmse_m": {
+          "mean": 6.215265069473903,
+          "std": 0.4332988209578632,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 6.88,
+          "std": 6.61706883748386,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9864197530864197,
+          "std": 0.0024691358024691024,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 76.08,
+          "std": 31.51243564055308,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.4735426714823676,
+          "std": 0.23799159748790508,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9787311320754717,
+          "std": 0.012989857310352458,
+          "n": 25
+        }
+      },
+      "evidence_all_ok": true
+    },
+    "identity_conflict": {
+      "seeds": 25,
+      "cif": {
+        "position_rmse_m": {
+          "mean": 6.024723321137773,
+          "std": 0.5148126735575889,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 1.92,
+          "std": 3.7727443592165106,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9876543209876543,
+          "std": 0.0,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 6.72,
+          "std": 10.963649027582012,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.501646470258515,
+          "std": 0.2916719871804689,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9705,
+          "std": 0.0202731349327133,
+          "n": 25
+        },
+        "mean_latency_ms": {
+          "mean": 0.27197722385832923,
+          "std": 0.01326208445243615,
+          "n": 25
+        }
+      },
+      "baseline": {
+        "position_rmse_m": {
+          "mean": 6.022393246757726,
+          "std": 0.5118755800839762,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 1.92,
+          "std": 3.7727443592165106,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9871604938271604,
+          "std": 0.002419249128674733,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 6.72,
+          "std": 10.963649027582012,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.5009576410828593,
+          "std": 0.2910156547082252,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9704810126582278,
+          "std": 0.02028083947788889,
+          "n": 25
+        }
+      },
+      "evidence_all_ok": true
+    },
+    "many_targets_6": {
+      "seeds": 25,
+      "cif": {
+        "position_rmse_m": {
+          "mean": 22.87188810509524,
+          "std": 2.4389636297621573,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 5.88,
+          "std": 3.680434756927502,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.8807407407407407,
+          "std": 0.023056140879850286,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 77.04,
+          "std": 36.81247614600246,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": 1.9229293778117307,
+          "std": 0.9081385342169486,
+          "n": 25
+        },
+        "nees_mean": {
+          "mean": 2.717686986234703,
+          "std": 0.527441987028542,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9668787660524178,
+          "std": 0.018285104180458533,
+          "n": 25
+        },
+        "mean_latency_ms": {
+          "mean": 3.4481835239394396,
+          "std": 0.21972595104198017,
+          "n": 25
+        }
+      },
+      "baseline": {
+        "position_rmse_m": {
+          "mean": 6.240069447586908,
+          "std": 0.2989161999234964,
+          "n": 25
+        },
+        "id_switches": {
+          "mean": 16.8,
+          "std": 10.766615066955817,
+          "n": 25
+        },
+        "continuity": {
+          "mean": 0.9866666666666666,
+          "std": 0.0014397412086037615,
+          "n": 25
+        },
+        "dropout_continuity": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "false_track_frames": {
+          "mean": 111.8,
+          "std": 39.90789395595814,
+          "n": 25
+        },
+        "mean_reacq_s": {
+          "mean": NaN,
+          "std": NaN,
+          "n": 0
+        },
+        "nees_mean": {
+          "mean": 2.5446429316088905,
+          "std": 0.17620834927095774,
+          "n": 25
+        },
+        "nees_p95_ok": {
+          "mean": 0.9736431525755366,
+          "std": 0.009495626903172193,
+          "n": 25
+        }
+      },
+      "evidence_all_ok": true
+    }
+  }
+}
