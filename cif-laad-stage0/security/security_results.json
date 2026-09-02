@@ -1,0 +1,214 @@
+{
+  "total": 17,
+  "passed": 17,
+  "failed": 0,
+  "results": [
+    {
+      "name": "stale_observation",
+      "category": "stale",
+      "expectation": "reject E_TS_STALE + emit OBS_REJECTED, no track",
+      "observed": {
+        "rejected": [
+          "E_TS_STALE"
+        ],
+        "events": [
+          "OBS_REJECTED"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "future_timestamp",
+      "category": "malformed-time",
+      "expectation": "reject E_TS_FUTURE, no track",
+      "observed": {
+        "rejected": [
+          "E_TS_FUTURE"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "nan_position",
+      "category": "malformed",
+      "expectation": "reject E_POS, no track",
+      "observed": {
+        "rejected": [
+          "E_POS"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "non_positive_definite_cov",
+      "category": "malformed",
+      "expectation": "reject E_COV_PD, no track",
+      "observed": {
+        "rejected": [
+          "E_COV_PD"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "asymmetric_cov",
+      "category": "malformed",
+      "expectation": "reject E_COV_SYM, no track",
+      "observed": {
+        "rejected": [
+          "E_COV_SYM"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "unknown_sensor_type",
+      "category": "malformed",
+      "expectation": "reject E_SENSOR_TYPE, no track",
+      "observed": {
+        "rejected": [
+          "E_SENSOR_TYPE"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "empty_sensor_id",
+      "category": "malformed",
+      "expectation": "reject E_SENSOR_ID",
+      "observed": {
+        "rejected": [
+          "E_SENSOR_ID"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "rfid_on_non_rf_sensor",
+      "category": "impersonation",
+      "expectation": "reject E_RFID (identity field only valid on rf)",
+      "observed": {
+        "rejected": [
+          "E_RFID"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "duplicate_replay",
+      "category": "replay",
+      "expectation": "second identical seq rejected E_REPLAY",
+      "observed": {
+        "rejected": [
+          "E_REPLAY"
+        ],
+        "events": [
+          "OBS_REPLAY_REJECTED"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "out_of_order_seq",
+      "category": "replay",
+      "expectation": "lower seq than last seen rejected E_REPLAY",
+      "observed": {
+        "rejected": [
+          "E_REPLAY"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "position_spoof_no_hijack",
+      "category": "spoof",
+      "expectation": "distant spoof cannot capture an existing track id",
+      "observed": {
+        "real_id": 1,
+        "real_track_xy_norm": 22.540860481189036
+      },
+      "passed": true,
+      "note": "LIMITATION: a spoof INSIDE the gate with a valid seq is kinematically indistinguishable; detecting it needs sensor authentication (out of scope)."
+    },
+    {
+      "name": "conflicting_identity",
+      "category": "conflicting-identity",
+      "expectation": "record contradiction + cap confidence below HIGH",
+      "observed": {
+        "contradiction_kinds": [
+          "identity"
+        ],
+        "recent_confidence": [
+          "LOW",
+          "LOW",
+          "LOW"
+        ]
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "sensor_outage_no_false_confidence",
+      "category": "outage",
+      "expectation": "on total outage track coasts/degrades, no fresh HIGH",
+      "observed": {
+        "last_reported_confidence": "MEDIUM",
+        "status": "CONFIRMED"
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "partial_network_low_diversity",
+      "category": "partial-network",
+      "expectation": "single-modality coherence stays below full-diversity ceiling",
+      "observed": {
+        "max_coherence": 0.574
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "corrupted_evidence_detected",
+      "category": "corrupted-evidence",
+      "expectation": "verify() True before mutation, False after",
+      "observed": {
+        "verify_before": true,
+        "verify_after": false
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "evidence_reorder_detected",
+      "category": "corrupted-evidence",
+      "expectation": "reordered chain fails verification",
+      "observed": {
+        "records": 6
+      },
+      "passed": true,
+      "note": ""
+    },
+    {
+      "name": "mixed_batch_partial_reject",
+      "category": "robustness",
+      "expectation": "malformed member rejected every cycle; valid ones still track",
+      "observed": {
+        "cycles_with_rejection": 5,
+        "confirmed_served": true
+      },
+      "passed": true,
+      "note": ""
+    }
+  ]
+}
