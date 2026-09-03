@@ -106,7 +106,7 @@ Refutations and tightenings are solicited as explicitly as confirmations — ple
 
 ## Citation
 
-Hone, D. (2026). *A Preregistered Falsification Program for a Coherence-Inheritance Control Framework: Simulation Testbeds and Two Hardware Tests.* Zenodo. https://doi.org/10.5281/zenodo.21246246
+Hone, D. (2026). *UIP Phase 1 (Closed): A Preregistered Falsification Program — 4 Confirmed / 5 Falsified, Including Two Hardware Rejections on IBM Quantum* (Version v6). Zenodo. https://doi.org/10.5281/zenodo.21246246
 
 License: CC-BY 4.0
 
