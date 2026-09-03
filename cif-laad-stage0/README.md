@@ -1,6 +1,6 @@
 # CIF-LAAD
 
-**Coherence-Inheritance Fusion for Low-Altitude Air Defense** - a
+**Coherent Inheritance Framework for Low-Altitude Air Defense** - a
 sensor-agnostic software fusion, tracking, and evidence layer.
 
 > STATUS: RESEARCH ONLY. TRL 3. SIMULATION-ONLY. Zero hardware, zero real
