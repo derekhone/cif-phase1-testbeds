@@ -108,7 +108,7 @@ Refutations and tightenings are solicited as explicitly as confirmations — ple
 
 Hone, D. (2026). *UIP Phase 1 (Closed): A Preregistered Falsification Program — 4 Confirmed / 5 Falsified, Including Two Hardware Rejections on IBM Quantum* (Version v6). Zenodo. https://doi.org/10.5281/zenodo.21246246
 
-License: CC-BY 4.0
+The cited research record is identified as CC BY 4.0. The repository root [LICENSE](LICENSE) supplies MIT terms; these are distinct statements, not a basis to relicense every artifact uniformly. See [LICENSE-SCOPE.md](LICENSE-SCOPE.md).
 
 ---
 
