@@ -9,6 +9,16 @@ when observations degrade or conflict.**
 > entry. See `FINAL_RF_REVIEW.md` for the Stage 0 honest verdict and
 > `validation/RESULTS.md` for the preregistered validation series.
 
+## Implementation access and canonical citation
+
+This public repository is a **research and provenance record**, not a complete runnable Stage 0 distribution. Only **2 of the 14** files in the frozen engine manifest are included publicly; the other 12 executable engine files are access-controlled. The full Stage 0 validation series **cannot be rerun from this public checkout alone**. Directory and command listings below describe the historical or controlled implementation tree; they are not an inventory of downloadable public implementation files.
+
+Access to the withheld implementation is reviewed individually by Remnant Fieldworks, subject to applicable release, security, licensing, and use-term requirements. The controlled-access policy is described in [the characterization README](../cif-laad-characterization/README.md). Listing a module here does not make its source available or grant permission to receive it.
+
+For historical findings, cite the unchanged [canonical validation/RESULTS.md](validation/RESULTS.md) (SHA-256 `a62eb760f5b77d52a23067fa4b7abe8327ec67c6d9b264b4c1f1882cb6bd1557`) or [Zenodo DOI 10.5281/zenodo.22255738](https://doi.org/10.5281/zenodo.22255738). Rerunning the series can generate a new `RESULTS.md` with broader wording; that generated document is **not** the canonical historical record. These results are simulation-only, internally reproduced, and **not independently validated by a third party**.
+
+The repository root [MIT LICENSE](../LICENSE) and [LICENSE-SCOPE.md](../LICENSE-SCOPE.md) remain unchanged. This clarification creates no new license grant, including for the withheld implementation. The frozen experiment default is `--mode gated`, a falsified mode; authorized reruns must select `--mode` explicitly.
+
 ## What CIF-LAAD does (and what it costs)
 
 CIF-LAAD adds three things to an ordinary multi-sensor tracker: track
@@ -55,6 +65,8 @@ benefit, not a primary claim.
 
 ## Layout
 
+The following is the intended/historical project layout, **not** the list of code available in the public checkout. In particular `sim/`, `bench/`, `api/` and most of `ciflaad/` and `experiments/` are access-controlled or absent publicly; `customer/` is a historical planning entry, not a currently shipped folder.
+
 ```
 ciflaad/        core library (observation, kalman, correlation, evidence,
                 coherence, confidence, track, fusion, baseline)
@@ -88,11 +100,13 @@ validation/
   out/*.json             raw machine-readable results
 ```
 
-## Reproduce everything
+## Reproduction commands (controlled implementation only)
+
+These commands require an authorized complete implementation tree; **they do not run from this public repository alone**. Historical records and preregistration remain available here for inspection.
 
 ### Stage 0 (original 25-seed study)
 ```
-python -m experiments.run_experiments --seeds 25   # EXPERIMENT_LEDGER.md
+python -m experiments.run_experiments --seeds 25 --mode batch   # controlled tree; choose mode explicitly
 python -m bench.benchmark                           # BENCHMARK.md
 python -m security.harness                          # SECURITY.md (17/17)
 python -m api.make_samples                          # api/samples/*.json
@@ -100,9 +114,9 @@ python -m api.make_samples                          # api/samples/*.json
 
 ### Validation series (preregistered)
 ```
-bash validation/run_series.sh
+bash experiments/laad_series/run_series.sh   # controlled tree only
 ```
-Runs all 8 experiments, synthesizes RESULTS.md, and verifies SHA-256 hashes.
+In the controlled tree, this runs the 8 experiments and generates outputs; its self-generated checksum check is not an independent historical comparison. The regenerated RESULTS.md is not the canonical record.
 Environment: Python 3.11.6, numpy 2.2.6, scipy 1.14.1. All RNG seeded.
 
 ## The boundary (Proof Before Power)
