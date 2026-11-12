@@ -1,16 +1,26 @@
 # CIF-LAAD Validation Series - Reproducibility Package
 
-Simulation-only. TRL 3. RESEARCH ONLY. This package lets anyone re-run the
-entire preregistered validation series and check the results bit-for-bit against
-the frozen record. It does NOT claim any independent validation was performed -
-no outside engineer or third party reran this series. It is here so that anyone
-who wants to rerun it can, and get the same numbers.
+Simulation-only. TRL 3. RESEARCH ONLY. This public repository preserves the
+historical research record but is **not a complete executable reproduction
+package**: only 2 of the 14 frozen engine files are included. The other 12 are
+access-controlled. Complete Stage 0 reruns require a separately authorized
+implementation tree, access review, and applicable use terms. See the
+[controlled-access policy](../../cif-laad-characterization/README.md).
+No independent third-party reproduction or validation is claimed.
+
+The repository root LICENSE and LICENSE-SCOPE.md describe existing public
+license information; this guide grants no new rights to withheld source.
+For results, cite only the unchanged canonical validation/RESULTS.md
+(SHA-256 a62eb760f5b77d52a23067fa4b7abe8327ec67c6d9b264b4c1f1882cb6bd1557)
+or Zenodo DOI 10.5281/zenodo.22255738. A newly generated RESULTS.md
+is not the canonical historical report.
 
 ## What is frozen
 
 - Engine: 14 files. The authoritative integrity check is the set of per-file
   SHA-256 hashes in `FREEZE_MANIFEST.txt`. Verify them directly with:
   ```bash
+  # This check requires the complete authorized engine and its manifest.
   grep -v '^combined' experiments/laad_series/FREEZE_MANIFEST.txt | sha256sum -c
   ```
   The single `combined` value
@@ -25,20 +35,24 @@ who wants to rerun it can, and get the same numbers.
 - Expected machine outputs: `EXPECTED_OUTPUTS.sha256` (SHA-256 of every
   `out/*.json`).
 
-## One-command reproduction
+## Reproduction in an authorized complete implementation tree
 
 ```bash
 # from the repo root (parent of experiments/)
 bash experiments/laad_series/run_series.sh
 ```
 
-This runs EXP-1..EXP-8 in order, regenerates `RESULTS.md`, `EXP1_RESULTS.md`
-and the per-experiment JSON, then runs `sha256sum -c` against
-`EXPECTED_OUTPUTS.sha256`. On the frozen environment every hash must match.
+This runs EXP-1..EXP-8 in order and generates reports and experiment JSON.
+It is not runnable from this public checkout. The script also regenerates
+`EXPECTED_OUTPUTS.sha256` before its checksum check; therefore that check
+must not be described as independent verification against untouched
+historical outputs. Compare outputs against the separately preserved frozen
+record, treating timing values separately. The regenerated `RESULTS.md`
+may omit claim restrictions and must not be cited as canonical.
 Total wallclock is roughly 25-30 minutes (EXP-1 ~15 min and EXP-4 N=32 ~6 min
 dominate; the pure-Python engine is single-threaded).
 
-Run a single unit instead:
+Run a single unit instead (authorized complete tree only):
 
 ```bash
 python3 -m experiments.laad_series.exp1_frontier   # writes out/exp1_frontier.json
@@ -75,6 +89,7 @@ python3 -m experiments.laad_series.exp1_frontier   # writes out/exp1_frontier.js
 - Provenance is tamper-EVIDENT, not tamper-proof. Uncertainty is not claimed to
   be better-calibrated than the baseline (NEES does not support that).
 - The coherence-gate inheritance mode is FALSIFIED and kept in the record; it is
-  not a recommended configuration.
+  not a recommended configuration. The original `run_experiments.py` defaults
+  to this `gated` mode. Always supply `--mode` explicitly for that harness.
 
 Built in faith. Tested in public. Claims kept narrower than the evidence.
